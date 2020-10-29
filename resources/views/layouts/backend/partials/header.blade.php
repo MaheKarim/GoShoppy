@@ -68,7 +68,7 @@
                                     <img
                                         width="42"
                                         class="rounded-circle"
-                                        src="assets/images/avatars/1.jpg"
+                                        src="/assets/images/avatars/1.jpg"
                                         alt=""
                                     />
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
@@ -94,13 +94,13 @@
                                                             <img
                                                                 width="42"
                                                                 class="rounded-circle"
-                                                                src="assets/images/avatars/1.jpg"
+                                                                src="/assets/images/avatars/1.jpg"
                                                                 alt=""
                                                             />
                                                         </div>
                                                         <div class="widget-content-left">
                                                             <div class="widget-heading">
-                                                                Alina Mcloughlin
+                                                               {{ Auth::user()->name }}
                                                             </div>
                                                             <div class="widget-subheading opacity-8">
                                                                 A short profile description
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                         <div class="widget-content-left ml-3 header-user-info">
-                            <div class="widget-heading">Mahe Karim</div>
+                            <div class="widget-heading">{{ Auth::user()->name }}</div>
                             <div class="widget-subheading">VP People Manager</div>
                         </div>
 

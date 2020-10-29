@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome');
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
-Route::view('/dashboard', 'backend.dashboard');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['as' => 'app.', 'prefix'=>'app', 'namespace' => 'Backend', 'middleware' =>['auth']], function (){
+    Route::get('/dashboard', 'DashboardController')->name('dashboard');
+});
