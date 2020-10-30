@@ -44,7 +44,7 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Menu</li>
                 <li>
-                    <a href="#" class="{{ Route::is('app.dashboard') ? 'mm-active' : '' }}">
+                    <a href="{{ route('app.dashboard') }}" class="{{ Route::is('app.dashboard') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-rocket"></i>Dashboards
                     </a>
                 </li>

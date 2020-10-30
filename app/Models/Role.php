@@ -8,7 +8,9 @@ class Role extends Model
 {
     protected $guarded = ['id'];
 
-    public function permissions()
+
+
+	public function permissions()
     {
         return $this->belongsToMany(Permission::class);
     }
