@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\Backend\DashboardController;
+    use App\Http\Controllers\HomeController;
+    use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 
-Route::group(['as' => 'app.', 'prefix'=>'app', 'namespace' => 'Backend', 'middleware' =>['auth']], function (){
-    Route::get('/dashboard', 'DashboardController')->name('dashboard');
+Route::group(['as' => 'app.', 'prefix'=>'app', 'middleware' =>['auth']], function (){
+
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
 });
