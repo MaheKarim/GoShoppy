@@ -43,10 +43,15 @@
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Menu</li>
-                <li class="mm-active">
-                    <a href="#">
+                <li>
+                    <a href="#" class="{{ Route::is('app.dashboard') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-rocket"></i>Dashboards
+                    </a>
+                </li>
 
+                <li >
+                    <a href="{{ route('app.roles.index') }}" class="{{ Request::is('app/roles*') ? 'mm-active' : ''}}">
+                        <i class="metismenu-icon pe-7s-check"></i>Roles
                     </a>
                 </li>
 

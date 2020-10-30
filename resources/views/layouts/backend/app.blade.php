@@ -7,8 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>{{ config('app.name', 'GoShoppy') }}</title>
 
 
     <!-- Fonts -->
@@ -17,6 +16,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @stack('css')
 </head>
 <body>
     <div id="app" class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
@@ -40,6 +41,7 @@
 {{--    </script>--}}
     <!-- Scripts -->
     <script src="{{ asset('assets/scripts/main.js') }}"></script>
-{{--    <script src="{{ asset('js/app.js') }}"></script>--}}
+    <script src="{{ asset('js/app.js') }}"></script>
+@stack('js')
 </body>
 </html>
