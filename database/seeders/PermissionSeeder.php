@@ -54,22 +54,22 @@ class PermissionSeeder extends Seeder
         ]);
         Permission::updateOrCreate([
             'module_id' => $moduleAppUser->id,
-            'name'      => 'Access Role',
+            'name'      => 'Access User',
             'slug'      => 'app.users.index',
         ]);
         Permission::updateOrCreate([
             'module_id' => $moduleAppUser->id,
-            'name'      => 'Create Role',
+            'name'      => 'Create User',
             'slug'      => 'app.users.create',
         ]);
         Permission::updateOrCreate([
             'module_id' => $moduleAppUser->id,
-            'name'      => 'Edit Role',
+            'name'      => 'Edit User',
             'slug'      => 'app.users.edit',
         ]);
         Permission::updateOrCreate([
             'module_id' => $moduleAppUser->id,
-            'name'      => 'Delete Role',
+            'name'      => 'Delete User',
             'slug'      => 'app.users.destroy',
         ]);
 

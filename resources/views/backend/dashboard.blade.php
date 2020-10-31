@@ -8,7 +8,11 @@
                     <i class="pe-7s-graph icon-gradient bg-ripe-malin"></i>
                 </div>
                 <div>
-                    CRM Dashboard
+                    @role('admin')
+                    Admin Dashboard ( Hi, {{ Auth::user()->name }}  )
+                    @else
+                        Dashboard
+                    @endrole
                     <div class="page-title-subheading">
                         Examples of just how powerful ArchitectUI really is!
                     </div>
