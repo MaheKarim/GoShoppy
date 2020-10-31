@@ -106,6 +106,10 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        if ($role->deletable) {
+            $role->delete();
+        } else {
+
+        } return back();
     }
 }

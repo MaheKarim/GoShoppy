@@ -42,6 +42,7 @@
     <!-- Scripts -->
     <script src="{{ asset('assets/scripts/main.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 @stack('js')
 </body>
 </html>
