@@ -45,19 +45,22 @@
                 <li class="app-sidebar__heading">Menu</li>
                 <li>
                     <a href="{{ route('app.dashboard') }}" class="{{ Route::is('app.dashboard') ? 'mm-active' : '' }}">
-                        <i class="metismenu-icon pe-7s-rocket"></i>Dashboards
+                        <i class="metismenu-icon pe-7s-rocket"></i>
+                        Dashboards
                     </a>
                 </li>
 
                 <li >
                     <a href="{{ route('app.roles.index') }}" class="{{ Request::is('app/roles*') ? 'mm-active' : ''}}">
-                        <i class="metismenu-icon pe-7s-check"></i>Roles
+                        <i class="metismenu-icon pe-7s-check"></i>
+                        Roles
                     </a>
                 </li>
 
                 <li >
                     <a href="{{ route('app.users.index') }}" class="{{ Request::is('app/users*') ? 'mm-active' : ''}}">
-                        <i class="metismenu-icon pe-7s-users"></i>Roles
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        Users
                     </a>
                 </li>
 

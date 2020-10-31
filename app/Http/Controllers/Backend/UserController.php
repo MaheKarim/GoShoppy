@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -29,7 +30,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        Gate::authorize('app.users.create');
+
+        $roles = Role::all();
+        return view('backend.users.form', compact('roles'));
     }
 
     /**
@@ -77,12 +81,7 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(User $user)
     {
        Gate::authorize('app.users.destroy');
