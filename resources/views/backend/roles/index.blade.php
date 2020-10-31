@@ -57,7 +57,7 @@
                             <tbody>
                                 @foreach($roles as $key=>$role)
                             <tr>
-                                <td class="text-center text-muted">#{{ $key+1 }}</td>
+                                <td class="text-center text-muted">{{ $key+1 }}</td>
                                 <td class="text-center">
                                     <div class="widget-content p-0">
                                         <div class="widget-content-wrapper">
