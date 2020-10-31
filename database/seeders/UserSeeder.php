@@ -20,6 +20,7 @@ use App\Models\User;
             'name'    => 'Admin',
             'email'   => 'admin@mail.com',
             'password' => Hash::make('password'),
+            'status'   => true,
         ]);
 
         User::updateOrCreate([
@@ -27,6 +28,7 @@ use App\Models\User;
             'name'    => 'User',
             'email'   => 'user@mail.com',
             'password' => Hash::make('password'),
+            'status'   => true,
         ]);
     }
 }
