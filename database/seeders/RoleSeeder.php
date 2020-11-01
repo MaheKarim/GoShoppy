@@ -22,6 +22,12 @@ class RoleSeeder extends Seeder
         ])->permissions()->sync($adminPermissions->pluck('id'));
 
         Role::updateOrCreate([
+            'name' => 'Stuff',
+            'slug' => 'stuff',
+            'deletable' => false,
+        ]);
+
+        Role::updateOrCreate([
             'name' => 'User',
             'slug' => 'user',
             'deletable' => false,

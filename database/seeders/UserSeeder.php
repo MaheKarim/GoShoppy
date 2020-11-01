@@ -24,6 +24,13 @@ use App\Models\User;
         ]);
 
         User::updateOrCreate([
+            'role_id'  => Role::where('slug', 'stuff')->first()->id,
+            'name'    => 'Stuff',
+            'email'   => 'stuff@mail.com',
+            'password' => Hash::make('password'),
+            'status'   => true,
+        ]);
+        User::updateOrCreate([
             'role_id'  => Role::where('slug', 'user')->first()->id,
             'name'    => 'User',
             'email'   => 'user@mail.com',
