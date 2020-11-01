@@ -69,38 +69,50 @@ class UserController extends Controller
             return redirect()->route('app.users.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(User $user)
     {
-        //
+        Gate::authorize('app.users.index');
+
+        return view('backend.users.show', compact('user'));
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(User $user)
     {
-        //
+        Gate::authorize('app.users.edit');
+
+        $roles = Role::all();
+        return view('backend.users.form', compact('roles', 'user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, User $user)
     {
-        //
+        Gate::authorize('app.users.edit');
+
+        $this->validate($request,[
+            'name' => 'required|string|max:255',
+            'email' => 'string|email|max:255|unique:users,email,'. $user->id,
+            'role' => 'required',
+            'password' => 'nullable|min:6|confirmed',
+            'avatar' => 'nullable|image'
+        ]);
+
+        $user->update([
+            'role_id' => $request->role,
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => isset($request->password) ? Hash::make($request->password) : $user->password,
+            'status' => $request->filled('status'),
+        ]);
+        // upload images
+        if ($request->hasFile('avatar')) {
+            $user->addMedia($request->avatar)->toMediaCollection('avatar');
+        }
+        notify()->success('User Successfully Updated.', 'Updated');
+        return redirect()->route('app.users.index');
     }
 
 

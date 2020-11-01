@@ -6,7 +6,6 @@
 <style>
     .dropify-wrapper .dropify-message p {
         font-size: initial;
-
     }
 </style>
 @endpush
@@ -63,7 +62,7 @@
                                         <label for="email">Email</label>
                                         <input id="email" type="email"
                                                class="form-control @error('email') is-invalid @enderror"
-                                               name="email" value="{{ $user->email ??  old('email') }}" >
+                                               name="email" value="{{ $user->email ??  old('email') }}" required>
 
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -76,7 +75,7 @@
                                         <label for="password">Password</label>
                                         <input id="password" type="password"
                                                class="form-control @error('password') is-invalid @enderror"
-                                               name="password" >
+                                               name="password" {{ !isset($user) ? 'required' : '' }}>
 
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -89,7 +88,7 @@
                                         <label for="confirm_password">Confirm Password</label>
                                         <input id="confirm_password" type="password"
                                                class="form-control @error('password') is-invalid @enderror"
-                                               name="password_confirmation" >
+                                               name="password_confirmation" {{ !isset($user) ? 'required' : '' }}>
 
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -112,7 +111,10 @@
                                                 class="js-example-basic-single form-control @error('role') is-invalid @enderror"
                                                 name="role" >
                                             @foreach($roles as $key=> $role)
-                                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                                <option value="{{ $role->id }}"
+                                                @isset($user) {{ $user->role->id == $role->id ? 'selected' : '' }}
+                                                    @endisset
+                                                >{{ $role->name }}</option>
                                             @endforeach
                                         </select>
 
@@ -129,9 +131,7 @@
 
                                         <input type="file" id="avatar"
                                                 class="dropify form-control @error('avatar') is-invalid @enderror"
-                                                name="avatar" required>
-
-
+                                                name="avatar" data-default-file="{{ isset($user) ? $user->getFirstMediaUrl('avatar') : '' }}" {{ !isset($user) ? 'required' : '' }}>
                                         @error('avatar')
                                         <span class="text-danger" role="alert">
                                              <strong>{{ $message }}</strong>
@@ -141,7 +141,7 @@
                                     <!-- Profile Image End -->
                                     <div class="form-group">
                                         <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="status" name="status">
+                                            <input type="checkbox" class="custom-control-input" id="status" name="status" @isset($user) {{ $user->status == true ? 'checked' : '' }} @endisset>
                                             <label class="custom-control-label" for="status">Status</label>
 
                                             @error('status')
