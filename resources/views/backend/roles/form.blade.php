@@ -8,7 +8,7 @@
                     <i class="pe-7s-check icon-gradient bg-ripe-malin"></i>
                 </div>
                 <div>
-                   {{ isset($role) ? 'Edit' : 'Create' }}  Roles Management
+                    {{ isset($role) ? 'Edit' : 'Create' }} Roles Management
                 </div>
             </div>
             <div class="page-title-actions">
@@ -26,16 +26,18 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="main-card mb-3 card">
-                    <form action="{{ isset($role) ? route('app.roles.update', $role->id) : route('app.roles.store') }}" method="post">
+                    <form action="{{ isset($role) ? route('app.roles.update', $role->id) : route('app.roles.store') }}"
+                          method="post">
                         @csrf
                         @isset($role)
                             @method('PUT')
-                            @endisset
+                        @endisset
                         <div class="card-body">
                             <h5 class="card-title">Role Title</h5>
                             <div class="form-group">
                                 <label for="name">Role Name</label>
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $role->name ??  old('name') }}" required autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                                       name="name" value="{{ $role->name ??  old('name') }}" required autofocus>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -70,34 +72,39 @@
                                             @foreach($module->permissions as $key=>$permission)
                                                 <div class="mb-3 ml-4">
                                                     <div class="custom-control custom-checkbox mb-2">
-<input type="checkbox" class="custom-control-input" id="permission-{{ $permission->id }}" name="permissions[]" value="{{ $permission->id }}" @isset($role)
-                                                     @foreach ($role->permissions as $rPermission)
-                                                        {{ $permission->id == $rPermission->id ? 'checked' : '' }}
-                                                     @endforeach                                                                                            @endisset
-    >
-                                                        <label for="permission-{{ $permission->id }}" class="custom-control-label">{{ $permission->name }}</label>
+                                                        <input type="checkbox" class="custom-control-input"
+                                                               id="permission-{{ $permission->id }}"
+                                                               name="permissions[]"
+                                                               value="{{ $permission->id }}" @isset($role)
+                                                            @foreach ($role->permissions as $rPermission)
+                                                                {{ $permission->id == $rPermission->id ? 'checked' : '' }}
+                                                                @endforeach                                                                                            @endisset
+                                                        >
+                                                        <label for="permission-{{ $permission->id }}"
+                                                               class="custom-control-label">{{ $permission->name }}</label>
                                                     </div>
 
                                                 </div>
-                                                @endforeach
+                                            @endforeach
                                         </div>
-                                        @endforeach
+                                    @endforeach
                                 </div>
-                                @empty
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <strong>No Module Found.</strong>
-                                        </div>
+                            @empty
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <strong>No Module Found.</strong>
                                     </div>
-                                @endforelse
+                                </div>
+                            @endforelse
                             <button type="submit" class="btn btn-primary">
                                 @isset($role)
                                     <i class="fas fa-arrow-circle-up"></i>
-                                    Update</button>
-                                    @else
+                                    Update
+                            @else
                                 <i class="fas fa-plus-circle"></i>
-                                Create</button>
-                                @endisset
+                                Create
+                            @endisset
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -108,19 +115,19 @@
 @endsection
 
 @push('js')
-   <script type="text/javascript">
-       // Listen for click on toggle checkbox
-       $('#select-all').click(function (event) {
-           if (this.checked) {
-               // Iterate each checkbox
-               $(':checkbox').each(function () {
-                   this.checked = true;
-               });
-           } else {
-               $(':checkbox').each(function () {
-                   this.checked = false;
-               });
-           }
-       });
+    <script type="text/javascript">
+        // Listen for click on toggle checkbox
+        $('#select-all').click(function (event) {
+            if (this.checked) {
+                // Iterate each checkbox
+                $(':checkbox').each(function () {
+                    this.checked = true;
+                });
+            } else {
+                $(':checkbox').each(function () {
+                    this.checked = false;
+                });
+            }
+        });
     </script>
 @endpush
