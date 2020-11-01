@@ -73,5 +73,14 @@ class PermissionSeeder extends Seeder
             'slug'      => 'app.users.destroy',
         ]);
 
+        $moduleAppNormalUser = Module::updateOrCreate([
+            'name'  => 'Normal User',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppNormalUser->id,
+            'name'      => 'Access Normal User',
+            'slug'      => 'users.dashboard',
+        ]);
+
     }
 }

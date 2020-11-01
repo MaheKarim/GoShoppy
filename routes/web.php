@@ -20,6 +20,8 @@ Route::view('/', 'welcome');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
-
-Route::resource('/user/dashboard', DashboardController::class);
+  // User Route Start From Here
+Route::group(['as'=>'user.', 'prefix'=>'user', 'middleware'=>['auth']], function (){
+    Route::resource('dashboard', DashboardController::class);
+});
 
