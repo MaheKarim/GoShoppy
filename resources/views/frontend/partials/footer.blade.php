@@ -14,7 +14,18 @@
                             </div>
                         </div>
                         <div class="col-lg-10">
-                            <div class="footer-address">Corporate Office</div>
+                            <div class="footer-address">USA Office</div>
+                            <div class="footer-address-dtl">3029A, Melbourne, Australia</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="footer-icon">
+                                <i class="las la-home"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="footer-address">Bangladesh Office</div>
                             <div class="footer-address-dtl">3029A, Melbourne, Australia</div>
                         </div>
                     </div>
@@ -112,7 +123,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="copyright-block">
-                        <p>&copy; 2020 <a href="index.html" title="exelsure courier service">Excelsure</a>. All Rights Reserved.</p>
+                        <p>&copy; {{ now()->year }} <a href="index.html" title="exelsure courier service">GoShoppy</a> |  All Rights Reserved.  </p>
                     </div>
                 </div>
                 <div class="col-md-6 text-right">
@@ -120,14 +131,9 @@
                         <ul>
                             <li class="policy"><a href="#" title="Privacy Policy">Privacy Policy </a></li>
                             <li><a href="#" title="Terms &amp; Conditions"> Terms &amp; Conditions </a></li>
-                            <li>
-                            <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" title="English"><i class="las la-globe"></i>English<i class="las la-caret-square-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" title="French">French</a></li>
-                                    <li><a href="#" title="Germany">Germany</a></li>
-                                    <li><a href="#" title="Urdu">Bengali</a></li>
-                                </ul>
+
+                            <li >
+                                <a href="#"  title="Developer"> <i class="las la-globe"></i>   Developed by  <a href="https://mahekarim.me" target="_blank">❤️ Mahe</a></a>
                             </li>
                         </ul>
                     </div>
