@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\USAddress;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class USAddressController extends Controller
 {
 
     public function index()
     {
+        Gate::authorize('app.us-address.index');
         $usaddresses = USAddress::all();
         return view('backend.us-address.index', compact('usaddresses'));
     }
@@ -19,6 +21,7 @@ class USAddressController extends Controller
 
     public function edit(USAddress $uSAddress, $id)
     {
+        Gate::authorize('app.us-address.edit');
         $usaddresses = USAddress::findOrFail($id);
         return view('backend.us-address.form', compact('usaddresses'));
     }

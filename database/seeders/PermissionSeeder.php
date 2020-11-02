@@ -87,8 +87,18 @@ class PermissionSeeder extends Seeder
         ]);
         Permission::updateOrCreate([
             'module_id' => $moduleAppUSAddress->id,
-            'name'      => 'Access USAddress',
-            'slug'      => 'app.us-address',
+            'name'      => 'Access US Address',
+            'slug'      => 'app.us-address.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppUSAddress->id,
+            'name'      => 'Update US Address',
+            'slug'      => 'app.us-address.update',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppUSAddress->id,
+            'name'      => 'Edit US Address',
+            'slug'      => 'app.us-address.edit',
         ]);
 
     }
