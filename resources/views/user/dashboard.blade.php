@@ -57,12 +57,8 @@
                                                  <h5 align="center">
                                                           <td>{{ $item->house_number }},</td> <br>
                                                           <td>{{ $item->street_number }},</td> <br>
-                                                          {{ $item->state_name }}, {{ $item->postal_code }},</td> <br>
-                                                            
-                                                                  <i class=" lnr-smartphone icon-gradient bg-mixed-hopes">  {{ $item->telephone_number }}</i>
-
-
-
+                                                         <td> {{ $item->state_name }}, {{ $item->postal_code }},</td> <br>
+                                                     <i class=" lnr-smartphone icon-gradient bg-mixed-hopes">  {{ $item->telephone_number }}</i>
                                                  </h5>
                                                 @endforeach
 

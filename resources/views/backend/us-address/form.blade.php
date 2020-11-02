@@ -5,11 +5,11 @@
         <div class="page-title-wrapper">
             <div class="page-title-heading">
                 <div class="page-title-icon">
-                    <i class="pe-7s-check icon-gradient bg-ripe-malin"></i>
+                    <i class="pe-7s-ribbon icon-gradient bg-ripe-malin"></i>
                 </div>
-{{--                <div>--}}
-{{--                    {{ isset($usaddresses) ? 'Edit' : 'Create' }} US Address Management--}}
-{{--                </div>--}}
+                <div>
+                    {{ isset($usaddresses) ? 'Edit' : 'Create' }} US Address Management
+                </div>
             </div>
             <div class="page-title-actions">
                 <a href="{{ route('app.us-address.index') }}" class="btn-shadow mr-3 btn btn-danger">
