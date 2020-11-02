@@ -15,52 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="page-title-actions">
-                <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom"
-                        class="btn-shadow mr-3 btn btn-dark">
-                    <i class="fa fa-star"></i>
-                </button>
-                <div class="d-inline-block dropdown">
-                    <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            class="btn-shadow dropdown-toggle btn btn-info">
-                                        <span class="btn-icon-wrapper pr-2 opacity-7">
-                                            <i class="fa fa-business-time fa-w-20"></i>
-                                        </span>
-                        Buttons
-                    </button>
-                    <div tabindex="-1" role="menu" aria-hidden="true"
-                         class="dropdown-menu dropdown-menu-right">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link">
-                                    <i class="nav-link-icon lnr-inbox"></i>
-                                    <span> Inbox</span>
-                                    <div class="ml-auto badge badge-pill badge-secondary">86</div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">
-                                    <i class="nav-link-icon lnr-book"></i>
-                                    <span> Book</span>
-                                    <div class="ml-auto badge badge-pill badge-danger">5</div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">
-                                    <i class="nav-link-icon lnr-picture"></i>
-                                    <span> Picture</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a disabled class="nav-link disabled">
-                                    <i class="nav-link-icon lnr-file-empty"></i>
-                                    <span> File Disabled</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 
@@ -69,7 +24,7 @@
             <div class="col-lg-12 ">
                 <div class="mb-3 profile-responsive card">
                     <div class="dropdown-menu-header">
-                        <div class="dropdown-menu-header-inner bg-dark">
+                        <div class="dropdown-menu-header-inner bg-arielle-smile">
                             <div class="menu-header-image opacity-1"
                                  style="background-image: url('assets/images/dropdown-header/abstract3.jpg');"></div>
                             <div class="menu-header-content btn-pane-right">
@@ -79,7 +34,7 @@
                                 </div>
                                 <div>
                                     <h5 class="menu-header-title">{{ Auth::user()->name }}</h5>
-                                    <h6 class="menu-header-subtitle">Etiam sit amet orci eget</h6>
+                                    <h6 class="menu-header-subtitle">You're our , {{ Auth::user()->role->slug }}</h6>
                                 </div>
                                 <div class="menu-header-btn-pane">
                                     <button class="btn btn-success">View Profile</button>
@@ -88,18 +43,34 @@
                         </div>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="widget-content pt-4 pb-4 pr-1 pl-1">
-                                <div class="text-center">
-                                    <h5 class="mb-0">
-                                                        <span class="pr-1">
-                                                            <b class="text-danger">Buy</b> from Abroad,
-                                                        </span>
-                                        <span> Send To <b class="text-success">Bangladesh</b>  </span>
-                                    </h5>
+
+                            <div class="main-card  card">
+                                <div class="card-header">
+                                    <i class="header-icon lnr-gift icon-gradient bg-mixed-hopes"> </i>
+                                    Our US Store Address
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tab-eg3-0" role="tabpanel">
+
+                                                @foreach($usaaddress as $item)
+                                                 <h5 align="center">
+                                                          <td>{{ $item->house_number }},</td> <br>
+                                                          <td>{{ $item->street_number }},</td> <br>
+                                                          {{ $item->state_name }}, {{ $item->postal_code }},</td> <br>
+                                                            
+                                                                  <i class=" lnr-smartphone icon-gradient bg-mixed-hopes">  {{ $item->telephone_number }}</i>
+
+
+
+                                                 </h5>
+                                                @endforeach
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
+
                         <li class="p-0 list-group-item">
                             <div class="grid-menu grid-menu-2col">
                                 <div class="no-gutters row">
@@ -107,7 +78,7 @@
                                         <div class="p-1">
                                             <button
                                                 class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-dark">
-                                                <i class="lnr-lighter text-dark opacity-7 btn-icon-wrapper mb-2"></i>
+                                                <i class="lnr-lighter text-dark opacity-0 btn-icon-wrapper mb-2"></i>
                                                 Buy For Me
                                             </button>
                                         </div>
@@ -117,7 +88,7 @@
                                             <button
                                                 class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
                                                 <i class="lnr-construction text-danger opacity-7 btn-icon-wrapper mb-2"></i>
-                                                Send For Me
+                                                Ship For Me
                                             </button>
                                         </div>
                                     </div>

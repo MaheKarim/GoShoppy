@@ -6,8 +6,7 @@
                 <button
                     type="button"
                     class="hamburger close-sidebar-btn hamburger--elastic"
-                    data-class="closed-sidebar"
-                >
+                    data-class="closed-sidebar">
                   <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                   </span>
@@ -61,6 +60,13 @@
                     <a href="{{ route('app.users.index') }}" class="{{ Request::is('app/users*') ? 'mm-active' : ''}}">
                         <i class="metismenu-icon pe-7s-users"></i>
                         Users
+                    </a>
+                </li>
+                <li class="app-sidebar__heading">System Functionalities</li>
+                <li>
+                    <a href="{{ route('app.us-address.index') }}" class="{{ Request::is('app/us-address*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-ribbon"></i>
+                        US Address
                     </a>
                 </li>
             </ul>

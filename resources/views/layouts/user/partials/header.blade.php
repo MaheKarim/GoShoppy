@@ -114,7 +114,6 @@
                                                     class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
                                                     <i class="pe-7s-ticket icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
                                                     <b>Support Tickets</b>
-
                                                 </button>
                                             </div>
                                         </div>
@@ -130,14 +129,10 @@
                             </div>
                         </div>
                         <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading"> Alina Mclourd</div>
-                            <div class="widget-subheading"> VP People Manager</div>
+                            <div class="widget-heading">{{ Auth::user()->name }}</div>
+                            <div class="widget-subheading">/{{ Auth::user()->role->slug }} </div>
                         </div>
-                        <div class="widget-content-right header-user-info ml-3">
-                            <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                            </button>
-                        </div>
+
                     </div>
                 </div>
             </div>

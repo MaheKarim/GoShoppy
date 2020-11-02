@@ -19,6 +19,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/iziToast.css') }}" rel="stylesheet">
     @stack('css')
+    @stack('cssUS')
 </head>
 <body>
     <div id="app" class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
@@ -47,6 +48,7 @@
     <script src="{{ asset('js/script.js') }}"></script>
     @include('vendor.lara-izitoast.toast')
 @stack('js')
+@stack('jsUS')
 
 </body>
 </html>

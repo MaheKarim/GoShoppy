@@ -38,7 +38,11 @@
                                         <li><a href="blog-details.html" title="Blog Detail">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html" title="contact">Contact</a>
+{{--                                <li>--}}
+{{--                                    <a href="contact.html" title="contact">Contact</a>--}}
+{{--                                </li>--}}
+                                <li>
+                                    <a href="{{ url('/login') }}" title="contact">Login</a>
                                 </li>
                             </ul>
                         </div>

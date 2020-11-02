@@ -72,7 +72,7 @@ class PermissionSeeder extends Seeder
             'name'      => 'Delete User',
             'slug'      => 'app.users.destroy',
         ]);
-
+        // Normal Access
         $moduleAppNormalUser = Module::updateOrCreate([
             'name'  => 'Normal User',
         ]);
@@ -80,6 +80,15 @@ class PermissionSeeder extends Seeder
             'module_id' => $moduleAppNormalUser->id,
             'name'      => 'Access Normal User',
             'slug'      => 'users.dashboard',
+        ]);
+        // USA Address
+        $moduleAppUSAddress = Module::updateOrCreate([
+            'name'  => 'USA Address Board',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppUSAddress->id,
+            'name'      => 'Access USAddress',
+            'slug'      => 'app.us-address',
         ]);
 
     }
