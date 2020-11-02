@@ -111,8 +111,6 @@
                                                                 class="btn-pill btn-shadow btn-shine btn btn-focus" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                                 {{ __('Logout') }}
-
-
                                                             </button>
                                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                                 @csrf
