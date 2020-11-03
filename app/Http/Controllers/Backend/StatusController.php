@@ -12,12 +12,14 @@ class StatusController extends Controller
 
     public function index()
     {
+        Gate::authorize('app.status.index');
         $statuses = Status::all();
         return view('backend.status.index', compact('statuses'));
     }
 
     public function create()
     {
+        Gate::authorize('app.status.create');
         return view('backend.status.create');
     }
 
@@ -29,6 +31,7 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
+        Gate::authorize('app.status.store');
         $statuses = new Status();
         $statuses->status = $request->status;
         $statuses->status_description = $request->status_description;
@@ -57,6 +60,7 @@ class StatusController extends Controller
      */
     public function edit($id)
     {
+        Gate::authorize('app.status.edit');
         $statuses = Status::findOrfail($id);
         return view('backend.status.form', compact('statuses'));
     }
@@ -70,6 +74,7 @@ class StatusController extends Controller
      */
     public function update(Request $request, Status $status)
     {
+        Gate::authorize('app.status.update');
         Status::findOrfail($request->status_id)->update([
            'status' => $request->status,
            'status_description' => $request->status_description,
@@ -86,7 +91,7 @@ class StatusController extends Controller
      */
     public function destroy(Status $status)
     {
-        Gate::authorize('app.roles.destroy');
+        Gate::authorize('app.status.destroy');
         if ($status->deletable) {
             $status->delete();
             notify()->success("Status Deleted Successfully!","Success");

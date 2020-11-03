@@ -101,5 +101,35 @@ class PermissionSeeder extends Seeder
             'slug'      => 'app.us-address.edit',
         ]);
 
+        // Status Management
+        $moduleAppStatus = Module::updateOrCreate([
+            'name'  => 'Status Panel',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppStatus->id,
+            'name'      => 'Access Status',
+            'slug'      => 'app.status.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppStatus->id,
+            'name'      => 'Create Status',
+            'slug'      => 'app.status.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppStatus->id,
+            'name'      => 'Edit Status',
+            'slug'      => 'app.status.edit',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppStatus->id,
+            'name'      => 'Update Status',
+            'slug'      => 'app.status.update',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAppStatus->id,
+            'name'      => 'Destroy Status',
+            'slug'      => 'app.status.destroy',
+        ]);
+
     }
 }
