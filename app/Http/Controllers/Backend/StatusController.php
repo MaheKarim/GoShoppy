@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Status;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class StatusController extends Controller
 {
@@ -12,12 +13,12 @@ class StatusController extends Controller
     public function index()
     {
         $statuses = Status::all();
-        return view('');
+        return view('backend.status.index', compact('statuses'));
     }
 
     public function create()
     {
-        //
+        return view('backend.status.create');
     }
 
     /**
@@ -28,7 +29,13 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $statuses = new Status();
+        $statuses->status = $request->status;
+        $statuses->status_description = $request->status_description;
+        $statuses->save();
+
+        notify()->success("Status Created Successfully","Success");
+        return redirect()->route('app.status.index');
     }
 
     /**
@@ -48,9 +55,10 @@ class StatusController extends Controller
      * @param  \App\Models\Status  $status
      * @return \Illuminate\Http\Response
      */
-    public function edit(Status $status)
+    public function edit($id)
     {
-        //
+        $statuses = Status::findOrfail($id);
+        return view('backend.status.form', compact('statuses'));
     }
 
     /**
@@ -62,7 +70,12 @@ class StatusController extends Controller
      */
     public function update(Request $request, Status $status)
     {
-        //
+        Status::findOrfail($request->status_id)->update([
+           'status' => $request->status,
+           'status_description' => $request->status_description,
+        ]);
+        notify()->success("Status Updated Successfully","Success");
+        return redirect()->route('app.status.index');
     }
 
     /**
@@ -73,6 +86,12 @@ class StatusController extends Controller
      */
     public function destroy(Status $status)
     {
-        //
+        Gate::authorize('app.roles.destroy');
+        if ($status->deletable) {
+            $status->delete();
+            notify()->success("Status Deleted Successfully!","Success");
+        } else {
+            notify()->error("You can\t delete system Status","Error");
+        } return back();
     }
 }

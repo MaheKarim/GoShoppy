@@ -9,7 +9,7 @@
         <div class="page-title-wrapper">
             <div class="page-title-heading">
                 <div class="page-title-icon">
-                    <i class="pe-7s-ribbon icon-gradient bg-ripe-malin"></i>
+                    <i class="pe-7s-gleam icon-gradient bg-ripe-malin"></i>
                 </div>
                 <div>
                    Status Management
@@ -25,7 +25,6 @@
     </div>
 
     <div class="tabs-animation">
-
         <div class="row">
             <div class="col-md-12">
                 <div class="main-card mb-3 card">
@@ -34,40 +33,38 @@
                     </div>
                     <div class="table-responsive">
                         <table
-                         id="datatable"   class="align-middle mb-0 table table-borderless table-striped table-hover"
-                        >
+                         id="datatable"   class="align-middle mb-0 table table-borderless table-striped table-hover">
                             <thead>
                             <tr>
                                 <th class="text-center">#</th>
                                 <th class="text-center">Status Name</th>
                                 <th class="text-center">Status Description</th>
-                                <th class="text-center">Created At</th>
+                                <th class="text-center">Status Updated</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($usaddresses as $key=> $uSAddress)
+                                @foreach($statuses as $key=> $status)
                             <tr>
                                 <td class="text-center text-muted">{{ $key+1 }}</td>
-                                <td class="text-center">{{ $uSAddress->house_number }}</td>
-                                <td class="text-center">{{ $uSAddress->street_number }}</td>
-                                <td class="text-center">{{ $uSAddress->state_name }}</td>
-                               <td class="text-center">{{ $uSAddress->updated_at->diffForHumans() }}</td>
+                                <td class="text-center">{{ $status->status }}</td>
+                                <td class="text-center">{{ $status->status_description }}</td>
+                               <td class="text-center">{{ $status->updated_at->diffForHumans() }}</td>
 
                                 <td class="text-center">
-                                    <a href="{{ route('app.us-address.edit', $uSAddress->id) }}"
+                                    <a href="{{ route('app.status.edit', $status->id) }}"
                                         class="btn btn-info btn-sm">
                                         <i class="fas fa-edit"></i>
                                         <span>Edit</span>
                                     </a>
-                                    @if($uSAddress->deletable ==true)
-                                        <button type="button" onclick="deleteData({{ $uSAddress->id }})"
+                                    @if($status->deletable ==true)
+                                        <button type="button" onclick="deleteData({{ $status->id }})"
                                                 class="btn btn-danger btn-sm">
                                             <i class="fas fa-trash-alt"></i>
                                             <span>Delete</span>
                                         </button>
-                                        <form id="delete-form-{{$uSAddress->id}}"
-                                              action="{{ route('app.us-address.destroy', $uSAddress->id) }}" method="POST"
+                                        <form id="delete-form-{{$status->id}}"
+                                              action="{{ route('app.status.destroy', $status->id) }}" method="POST"
                                               style="display: none;">
                                             @csrf
                                             @method('DELETE ')
@@ -79,11 +76,9 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </div>
 @endsection
 

@@ -69,6 +69,12 @@
                         US Address
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('app.status.index') }}" class="{{ Request::is('app/status*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-gleam"></i>
+                        Status
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
