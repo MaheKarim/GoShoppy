@@ -2,6 +2,7 @@
 
     use App\Http\Controllers\Backend\DashboardController;
     use App\Http\Controllers\Backend\RoleController;
+    use App\Http\Controllers\Backend\StatusController;
     use App\Http\Controllers\Backend\USAddressController;
     use App\Http\Controllers\Backend\UserController;
     use Illuminate\Support\Facades\Route;
@@ -22,3 +23,4 @@
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('us-address', USAddressController::class);
+    Route::resource('status', StatusController::class);
