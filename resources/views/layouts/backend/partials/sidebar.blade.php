@@ -75,6 +75,15 @@
                         Status
                     </a>
                 </li>
+
+                <li class="app-sidebar__heading">Website Functionalities</li>
+                <li>
+                    <a href="{{ route('app.faq-system.index') }}" class="{{ Request::is('app/faq*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-comment"></i>
+                        FAQ
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>

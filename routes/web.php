@@ -2,6 +2,7 @@
 
 
     use App\Http\Controllers\HomeController;
+    use App\Http\Controllers\SiteController;
     use App\Http\Controllers\User\DashboardController;
     use App\Http\Controllers\Frontend\FrontendController;
     use App\Http\Controllers\User\ProfileController;
@@ -21,6 +22,10 @@
 
 Route::resource('/', FrontendController::class);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+  // FAQ Page
+
+    Route::get('/faq', [SiteController::class,'show']);
 
 Auth::routes();
   // User Route Start From Here

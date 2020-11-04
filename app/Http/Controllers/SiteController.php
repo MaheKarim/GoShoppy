@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\FAQ;
 use Illuminate\Http\Request;
 
-class FrontendController extends Controller
+class SiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('frontend.welcome');
+        //
     }
 
     /**
@@ -47,7 +46,9 @@ class FrontendController extends Controller
      */
     public function show()
     {
+        $faqs = FAQ::all();
 
+        return view('frontend.faq', compact('faqs'));
     }
 
     /**

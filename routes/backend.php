@@ -1,6 +1,7 @@
 <?php
 
     use App\Http\Controllers\Backend\DashboardController;
+    use App\Http\Controllers\Backend\FAQController;
     use App\Http\Controllers\Backend\ProfileController;
     use App\Http\Controllers\Backend\RoleController;
     use App\Http\Controllers\Backend\StatusController;
@@ -25,6 +26,8 @@
     Route::resource('users', UserController::class);
     Route::resource('us-address', USAddressController::class);
     Route::resource('status', StatusController::class);
+
+    Route::resource('faq-system', FAQController::class);
 
 
     // Profile Controller
