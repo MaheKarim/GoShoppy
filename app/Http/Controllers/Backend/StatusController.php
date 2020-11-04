@@ -19,7 +19,7 @@ class StatusController extends Controller
 
     public function create()
     {
-        Gate::authorize('app.status.create');
+       // Gate::authorize('app.status.create');
         return view('backend.status.create');
     }
 
@@ -31,7 +31,7 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        Gate::authorize('app.status.store');
+       // Gate::authorize('app.status.store');
         $statuses = new Status();
         $statuses->status = $request->status;
         $statuses->status_description = $request->status_description;

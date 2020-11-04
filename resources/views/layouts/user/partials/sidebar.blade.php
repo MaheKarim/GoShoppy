@@ -36,8 +36,8 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Menu</li>
                 <li class="mm-active">
-                    <a href="{{ url('user/dashboard') }}">
-                        <i class="metismenu-icon pe-7s-rocket"></i>Dashboards
+                    <a href="{{ url('user/dashboard') }}" class="{{ Request::is('user.dashboard') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-home"></i>Dashboards
                     </a>
                 </li>
 
@@ -45,8 +45,8 @@
 
                 <li class="app-sidebar__heading">Courier Widgets</li>
                 <li>
-                    <a href="widgets-chart-boxes.html">
-                        <i class="metismenu-icon pe-7s-graph"></i>Send For Me
+                    <a href="widgets-chart-boxes.html" >
+                        <i class="metismenu-icon pe-7s-graph"></i>Ship For Me
                     </a>
                 </li>
 

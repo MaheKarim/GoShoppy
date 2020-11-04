@@ -1,6 +1,7 @@
 <?php
 
     use App\Http\Controllers\Backend\DashboardController;
+    use App\Http\Controllers\Backend\ProfileController;
     use App\Http\Controllers\Backend\RoleController;
     use App\Http\Controllers\Backend\StatusController;
     use App\Http\Controllers\Backend\USAddressController;
@@ -24,3 +25,9 @@
     Route::resource('users', UserController::class);
     Route::resource('us-address', USAddressController::class);
     Route::resource('status', StatusController::class);
+
+
+    // Profile Controller
+
+    Route::get('profile', [ProfileController::class,'index'])->name('profile.index');
+    Route::put('profile', [ProfileController::class,'update'])->name('profile.update');
