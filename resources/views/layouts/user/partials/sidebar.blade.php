@@ -65,18 +65,18 @@
                     <ul
                     >
                         <li>
-                            <a href="forms-controls.html">
-                                <i class="metismenu-icon"></i>Password Change
+                            <a href="{{ route('user.profileIndex') }}" class="{{ Request::is('user/profileIndex') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Profile Update
                             </a>
                         </li>
                         <li>
                             <a href="forms-layouts.html">
-                                <i class="metismenu-icon"></i>Profile Image
+                                <i class="metismenu-icon"></i>Password Change
                             </a>
                         </li>
                         <li>
                             <a href="forms-validation.html">
-                                <i class="metismenu-icon"></i>Profile Update
+                                <i class="metismenu-icon"></i>Profile View
                             </a>
                         </li>
 

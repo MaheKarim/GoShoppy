@@ -4,6 +4,7 @@
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\User\DashboardController;
     use App\Http\Controllers\Frontend\FrontendController;
+    use App\Http\Controllers\User\ProfileController;
     use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,5 +25,7 @@ Auth::routes();
   // User Route Start From Here
 Route::group(['as'=>'user.', 'prefix'=>'user', 'middleware'=>['auth']], function (){
     Route::resource('dashboard', DashboardController::class);
+    Route::get('profile', [ProfileController::class,'index'])->name('profileIndex');
+    Route::put('profile', [ProfileController::class,'update'])->name('profileUpdate');
 });
 

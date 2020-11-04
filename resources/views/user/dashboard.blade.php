@@ -30,7 +30,7 @@
                             <div class="menu-header-content btn-pane-right">
                                 <div class="avatar-icon-wrapper mr-3 avatar-icon-xl btn-hover-shine">
                                     <div class="avatar-icon rounded">
-                                        <img src="/assets/images/avatars/1.jpg" alt="Avatar 5"></div>
+                                        <img src="{{ Auth::user()->getFirstMediaUrl('avatar') }}" alt="Avatar 5"></div>
                                 </div>
                                 <div>
                                     <h5 class="menu-header-title">{{ Auth::user()->name }}</h5>
@@ -113,12 +113,16 @@
             </div>
         </div>
         <div class="text-center mb-3">
-            <h5 class="menu-header-title text-capitalize mb-3 fsize-3">Your Last Transaction</h5>
             <div role="group" class="mb-3 btn-group-lg btn-group">
-                <button type="button" class="btn-shadow active btn btn-primary">Hour</button>
-                <button type="button" class="btn-shadow  btn btn-primary">Day</button>
-                <button type="button" class="btn-shadow  btn btn-primary">Week</button>
-                <button type="button" class="btn-shadow  btn btn-primary">Month</button>
+                    <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-primary">Primary</div>
+                    <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-secondary">Secondary</div>
+                    <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-success">Success</div>
+                    <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-info">Info</div>
+                    <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-warning">Warning</div>
+                    <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-danger">Danger</div>
+                    <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-focus">Focus</div>
+                    <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-alternate">Alt</div>
+                    <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-dark">Dark</div>
             </div>
         </div>
         <div class="row">

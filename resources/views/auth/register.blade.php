@@ -60,6 +60,50 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <!-- Extra Field -->
+                        <div class="form-group row">
+                            <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}"
+                                       required autocomplete="phone_number" autofocus placeholder="Please Put Dial Code. Ex: +880">
+
+                                @error('phone_number')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="state_name" class="col-md-4 col-form-label text-md-right">{{ __('State / District Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="state_name" type="text" class="form-control @error('state_name') is-invalid @enderror" name="state_name" value="{{ old('state_name') }}"
+                                       required autocomplete="state_name" autofocus >
+
+                                @error('state_name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="current_country" class="col-md-4 col-form-label text-md-right">{{ __('Current Living Country Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="current_country" type="text" class="form-control @error('current_country') is-invalid @enderror" name="current_country" value="{{ old('current_country') }}"
+                                       required autocomplete="current_country" autofocus >
+
+                                @error('current_country')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

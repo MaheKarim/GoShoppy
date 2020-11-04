@@ -20,6 +20,10 @@ use App\Models\User;
             'name'    => 'Admin',
             'email'   => 'admin@mail.com',
             'password' => Hash::make('password'),
+            'phone_number' => '+8801778966356',
+            'state_name' => 'Dhaka',
+            'current_country' => 'Bangladesh',
+            'deposit_balance' => '0',
             'status'   => true,
         ]);
 
@@ -28,6 +32,10 @@ use App\Models\User;
             'name'    => 'Stuff',
             'email'   => 'stuff@mail.com',
             'password' => Hash::make('password'),
+            'phone_number' => '+8801778966355',
+            'state_name' => 'Dhaka',
+            'current_country' => 'Bangladesh',
+            'deposit_balance' => '0',
             'status'   => true,
         ]);
         User::updateOrCreate([
@@ -35,6 +43,10 @@ use App\Models\User;
             'name'    => 'User',
             'email'   => 'user@mail.com',
             'password' => Hash::make('password'),
+            'phone_number' => '+8801303062727',
+            'state_name' => 'Dhaka',
+            'current_country' => 'Bangladesh',
+            'deposit_balance' => '0',
             'status'   => true,
         ]);
     }
