@@ -24,7 +24,7 @@ class ProfileController extends Controller
         $user = Auth::user();
         $user->update([
            'name' => $request->name,
-           'email' => $request->email,
+//           'email' => $request->email,
         ]);
         // Upload Image
         if ($request->hasFile('avatar')) {

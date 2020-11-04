@@ -14,7 +14,7 @@
         <div class="page-title-wrapper">
             <div class="page-title-heading">
                 <div class="page-title-icon">
-                    <i class="pe-7s-profile icon-gradient bg-ripe-malin"></i>
+                    <i class="pe-7s-smile icon-gradient bg-ripe-malin"></i>
                 </div>
                 <div>
                    Profile Management
@@ -73,7 +73,7 @@
                                         <label for="email">Email</label>
                                         <input id="email" type="email"
                                                class="form-control @error('email') is-invalid @enderror"
-                                               name="email" value="{{ Auth::user()->email  }}">
+                                               name="email" value="{{ Auth::user()->email  }}" disabled>
 
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
