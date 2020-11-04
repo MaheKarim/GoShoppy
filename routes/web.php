@@ -5,6 +5,7 @@
     use App\Http\Controllers\User\DashboardController;
     use App\Http\Controllers\Frontend\FrontendController;
     use App\Http\Controllers\User\ProfileController;
+    use App\Http\Controllers\User\ShipForMeController;
     use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +28,8 @@ Route::group(['as'=>'user.', 'prefix'=>'user', 'middleware'=>['auth']], function
     Route::resource('dashboard', DashboardController::class);
     Route::get('profile', [ProfileController::class,'index'])->name('profileIndex');
     Route::put('profile', [ProfileController::class,'update'])->name('profileUpdate');
+
+    // Ship For Me
+    Route::resource('ShipForMe', ShipForMeController::class);
 });
 

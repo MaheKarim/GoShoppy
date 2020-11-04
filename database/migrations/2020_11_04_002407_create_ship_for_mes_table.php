@@ -15,7 +15,22 @@ class CreateShipForMesTable extends Migration
     {
         Schema::create('ship_for_mes', function (Blueprint $table) {
             $table->id();
-
+            $table->foreignId('status_id');
+            $table->string('product_name');
+            $table->string('product_link')->nullable();
+            $table->string('product_weight');
+            $table->string('product_quantity');
+            $table->string('recvr_name');
+            $table->string('recvr_phn_number1');
+            $table->string('recvr_phn_number2')->nullable();
+            $table->string('recvr_mail')->nullable();
+            $table->longText('recvr_address');
+            $table->string('recvr_upazila');
+            $table->string('recvr_zila');
+            $table->string('track_id');
+            $table->longText('comment')->nullable();
+            $table->string('delivery_time')->nullable();
+            $table->string('user_id');
             $table->timestamps();
         });
     }

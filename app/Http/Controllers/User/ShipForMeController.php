@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\ShipForMe;
+use App\Models\USAddress;
 use Illuminate\Http\Request;
 
 class ShipForMeController extends Controller
@@ -25,7 +26,8 @@ class ShipForMeController extends Controller
      */
     public function create()
     {
-        //
+        $usaddresses = USAddress::find(1);
+        return view('user.ship-for-me.create', compact('usaddresses'));
     }
 
     /**

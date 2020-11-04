@@ -45,7 +45,7 @@
 
                 <li class="app-sidebar__heading">Courier Widgets</li>
                 <li>
-                    <a href="widgets-chart-boxes.html" >
+                    <a href="{{ route('user.ShipForMe.create') }}" class="{{ Request::is('user/ShipForMe*') ? 'mm-active' : '' }}" >
                         <i class="metismenu-icon pe-7s-graph"></i>Ship For Me
                     </a>
                 </li>

@@ -81,20 +81,20 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="p-1">
-                                            <button
+                                            <a href="{{ route('user.ShipForMe.create') }}"
                                                 class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
                                                 <i class="lnr-construction text-danger opacity-7 btn-icon-wrapper mb-2"></i>
                                                 Ship For Me
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="p-1">
-                                            <button
+                                            <a
                                                 class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-success">
                                                 <i class="lnr-bus text-success opacity-7 btn-icon-wrapper mb-2"></i>
                                                 Deposit
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">

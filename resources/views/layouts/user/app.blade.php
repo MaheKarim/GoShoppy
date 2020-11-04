@@ -19,6 +19,7 @@
 
     <link href="{{ asset('/') }}main.css" rel="stylesheet">
     @stack('css_user')
+    @stack('wizard')
 </head>
 
 <body>
@@ -41,5 +42,6 @@
 
 <script type="text/javascript" src="{{ asset('/') }}assets/scripts/main.js"></script>
 @stack('js_user')
+@stack('wizard_js')
 </body>
 </html>
