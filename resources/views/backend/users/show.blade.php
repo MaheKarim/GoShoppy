@@ -56,6 +56,28 @@
                             <td>{{ $user->email }}</td>
                         </tr>
                         <tr>
+                            <th scope="row">Contact Number:</th>
+                            <td>{{ $user->phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">State:</th>
+                            <td>{{ $user->state_name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Country:</th>
+                            <td>{{ $user->current_country }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Deposit Balance:</th>
+                            <td>
+                                @if ($user->deposit_balance > 100 )
+                                    {{ $user->deposit_balance }} BDT
+                                @else
+                                    <div class="badge badge-danger">{{ $user->deposit_balance }} BDT</div>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
                             <th scope="row">Role:</th>
                             <td>
                                 @if ($user->role)

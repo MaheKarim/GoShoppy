@@ -72,6 +72,58 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="phone_number">Contact Number</label>
+                                        <input id="phone_number" type="text"
+                                               class="form-control @error('phone_number') is-invalid @enderror"
+                                               name="phone_number" value="{{ $user->phone_number ??  old('phone_number') }}" required>
+
+                                        @error('phone_number')
+                                        <span class="invalid-feedback" role="alert">
+                                         <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="state_name">State Name</label>
+                                        <input id="state_name" type="text"
+                                               class="form-control @error('state_name') is-invalid @enderror"
+                                               name="state_name" value="{{ $user->state_name ??  old('state_name') }}" required>
+
+                                        @error('state_name')
+                                        <span class="invalid-feedback" role="alert">
+                                         <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="current_country">Country Name</label>
+                                        <input id="current_country" type="text"
+                                               class="form-control @error('current_country') is-invalid @enderror"
+                                               name="current_country" value="{{ $user->current_country ??  old('current_country') }}" required>
+
+                                        @error('current_country')
+                                        <span class="invalid-feedback" role="alert">
+                                         <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="deposit_balance">Deposit Balance</label>
+                                        <input id="deposit_balance" type="text"
+                                               class="form-control @error('deposit_balance') is-invalid @enderror"
+                                               name="deposit_balance" value="{{ $user->deposit_balance ??  old('deposit_balance') }}">
+
+                                        @error('deposit_balance')
+                                        <span class="invalid-feedback" role="alert">
+                                         <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="password">Password</label>
                                         <input id="password" type="password"
                                                class="form-control @error('password') is-invalid @enderror"

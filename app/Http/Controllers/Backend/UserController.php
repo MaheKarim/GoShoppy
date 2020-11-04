@@ -52,13 +52,18 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'role' => 'required',
             'password' => 'required|confirmed|string|min:6',
-            'avatar' => 'required|image'
+            'avatar' => 'required|image',
+            'deposit_balance' => 'required'
         ]);
 
         $user = User::create([
             'role_id' => $request->role,
             'name' => $request->name,
             'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'state_name' => $request->state_name,
+            'current_country' => $request->current_country,
+            'deposit_balance' => $request->deposit_balance,
             'password' => Hash::make($request->password),
             'status' => $request->filled('status')
         ]);
@@ -104,6 +109,10 @@ class UserController extends Controller
             'role_id' => $request->role,
             'name' => $request->name,
             'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'state_name' => $request->state_name,
+            'current_country' => $request->current_country,
+            'deposit_balance' => $request->deposit_balance,
             'password' => isset($request->password) ? Hash::make($request->password) : $user->password,
             'status' => $request->filled('status'),
         ]);

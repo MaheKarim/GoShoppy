@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\USAddress;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -15,6 +16,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
+
         $usaaddress = USAddress::all();
         return  view('user.dashboard', compact('usaaddress'));
     }
