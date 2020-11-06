@@ -1,6 +1,6 @@
 @extends('layouts.user.app')
 
-@section('title','User Details')
+@section('title','Order Details')
 
 @section('content')
     <div class="app-page-title">

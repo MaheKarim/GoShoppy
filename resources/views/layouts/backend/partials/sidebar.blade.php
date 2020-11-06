@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('app/ShipForMe/Orders') }}" class="{{ Request::is('app/ShipForMe/Orders*') ? 'mm-active' : '' }}">
+                    <a href="{{ url('app/shipforme-orders') }}" class="{{ Request::is('app/shipforme-orders*') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-cash"></i>
                         ShipForMe - Orders
                     </a>

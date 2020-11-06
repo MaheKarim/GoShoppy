@@ -29,7 +29,7 @@
     Route::resource('status', StatusController::class);
     Route::resource('faq-system', FAQController::class);
 
-    Route::resource('ShipForMe/Orders', ShipOrderProcessController::class);
+    Route::resource('shipforme-orders', ShipOrderProcessController::class);
 
 
     // Profile Controller

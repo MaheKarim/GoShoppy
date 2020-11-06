@@ -16,16 +16,6 @@
                 </div>
                 <div>{{ __('All ShipForMe Orders') }}</div>
             </div>
-            <div class="page-title-actions">
-                <div class="d-inline-block dropdown">
-                    <a href="{{ route('app.users.create') }}" class="btn-shadow btn btn-info">
-                        <span class="btn-icon-wrapper pr-2 opacity-7">
-                            <i class="fas fa-plus-circle fa-w-20"></i>
-                        </span>
-                        {{ __('Create User') }}
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
     <div class="row">
@@ -41,7 +31,6 @@
                             <th class="text-center">Order Status</th>
                             <th class="text-center">Comment</th>
                             <th class="text-center">Delivery Time</th>
-
                             <th class="text-center">Ordered At</th>
                             <th class="text-center">Actions</th>
                         </tr>
@@ -54,15 +43,8 @@
                                 <td>
                                     <div class="widget-content p-0">
                                         <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-{{--                                                <div class="widget-content-left">--}}
-{{--                                                    <img width="40" class="rounded-circle"--}}
-{{--                                                         src="{{ $user->getFirstMediaUrl('avatar') != null ? $user->getFirstMediaUrl('avatar') : config('app.placeholder').'160.png' }}" alt="User Avatar">--}}
-{{--                                                </div>--}}
-                                            </div>
                                             <div class="widget-content-left flex2">
                                                 <div class="widget-heading">{{ $order->product_name }}</div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +62,7 @@
                                 <td class="text-center">{{ $order->delivery_time }}</td>
                                 <td class="text-center">{{ $order->created_at->diffForHumans() }}</td>
                                 <td class="text-center">
-                                    <a class="btn btn-secondary btn-sm" href="{{ route('app.users.show',$order->id) }}"><i
+                                    <a class="btn btn-secondary btn-sm" href="{{ route('app.shipforme-orders.show', $order->id) }}"><i
                                             class="fas fa-eye"></i>
                                         <span>Show</span>
                                     </a>

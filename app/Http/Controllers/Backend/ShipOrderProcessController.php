@@ -47,9 +47,10 @@ class ShipOrderProcessController extends Controller
      * @param  \App\Models\ShipForMe  $shipForMe
      * @return \Illuminate\Http\Response
      */
-    public function show(ShipForMe $shipForMe)
+    public function show(ShipForMe $shipForMe, $id)
     {
-        //
+        $order = ShipForMe::find($id);
+        return view('backend.shipForMe.order_fullview', compact('order'));
     }
 
     /**

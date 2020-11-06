@@ -47,6 +47,10 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->belongsTo(Role::class);
     }
+    public function shipOrders()
+    {
+        return $this->hasMany(ShipForMe::class);
+    }
 
     public function hasPermission($permission):bool {
         return $this->role->permissions()->where('slug', $permission)->first() ? true : false;
