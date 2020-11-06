@@ -20,6 +20,10 @@
 |
 */
 
+    Route::get('/optimize', [FrontendController::class, 'optimize']);
+    Route::get('/clear', [FrontendController::class, 'optimize']);
+    Route::get('/install', [FrontendController::class, 'optimize']);
+
 Route::resource('/', FrontendController::class);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 

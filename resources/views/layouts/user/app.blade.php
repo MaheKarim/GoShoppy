@@ -18,6 +18,7 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <link href="{{ asset('/') }}main.css" rel="stylesheet">
+    @stack('css_new')
     @stack('css_user')
     @stack('wizard')
 </head>
@@ -41,6 +42,7 @@
 </div>
 
 <script type="text/javascript" src="{{ asset('/') }}assets/scripts/main.js"></script>
+@stack('js_new')
 @stack('wizard_js')
 @stack('js_user')
 

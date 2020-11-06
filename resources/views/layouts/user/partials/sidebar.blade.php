@@ -40,30 +40,39 @@
                         <i class="metismenu-icon pe-7s-home"></i>Dashboards
                     </a>
                 </li>
-
-
-
                 <li class="app-sidebar__heading">Courier Widgets</li>
+                <!-- Courier Widget -->
                 <li>
-                    <a href="{{ route('user.ShipForMe.create') }}" class="{{ Request::is('user/ShipForMe*') ? 'mm-active' : '' }}" >
-                        <i class="metismenu-icon pe-7s-graph"></i>Ship For Me
+                    <a href="#" class="{{ Request::is('user/ShipForMe*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-light"></i> ShipForMe - Orders
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('user.ShipForMe.index') }}" class="{{ Request::is('user/ShipForMe') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Check Order Status
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('user.ShipForMe.create') }}" class="{{ Request::is('user/ShipForMe/create') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Send ShipForMe Request
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-
+                <!-- Courier Widget End -->
                 <li>
                     <a href="widgets-profile-boxes.html">
                         <i class="metismenu-icon pe-7s-id"></i>Buy For Me
                     </a>
                 </li>
                 <li class="app-sidebar__heading">Settings Panel</li>
-                <li
-                >
+                <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-light"></i> Your Settings
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
-                    <ul
-                    >
+                    <ul>
                         <li>
                             <a href="{{ route('user.profileIndex') }}" class="{{ Request::is('user/profileIndex') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>Profile Update
@@ -82,7 +91,6 @@
 
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>

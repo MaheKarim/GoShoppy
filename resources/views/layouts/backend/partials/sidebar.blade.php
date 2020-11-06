@@ -48,6 +48,12 @@
                         Dashboards
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('app.dashboard') }}" class="{{ Route::is('app.dashboard') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-cash"></i>
+                        ShipForMe - Orders
+                    </a>
+                </li>
                 <li class="app-sidebar__heading">Management Section</li>
                 <li >
                     <a href="{{ route('app.roles.index') }}" class="{{ Request::is('app/roles*') ? 'mm-active' : ''}}">

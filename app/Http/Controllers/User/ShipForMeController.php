@@ -18,7 +18,8 @@ class ShipForMeController extends Controller
      */
     public function index()
     {
-        //
+        $shipformes = ShipForMe::where('user_id', Auth::id())->get();
+        return view('user.ship-for-me.showown_order', compact('shipformes'));
     }
 
     /**
@@ -88,9 +89,10 @@ class ShipForMeController extends Controller
      * @param  \App\Models\ShipForMe  $shipForMe
      * @return \Illuminate\Http\Response
      */
-    public function show(ShipForMe $shipForMe)
+    public function show(ShipForMe $shipForMe, $id)
     {
-        //
+      $shipForMe = ShipForMe::find($id);
+      return view('user.ship-for-me.single_order', compact('shipForMe'));
     }
 
     /**

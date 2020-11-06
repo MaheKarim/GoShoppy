@@ -11,7 +11,7 @@ class ShipForMe extends Model
 
     protected $guarded = ['id'];
 
-    public function roles(){
-
+    public function status(){
+        return $this->belongsTo(Status::class);
     }
 }

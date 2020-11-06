@@ -105,10 +105,6 @@
                             <th scope="row">Last Modified At:</th>
                             <td>{{ $user->updated_at->diffForHumans() }}</td>
                         </tr>
-{{--                        <tr>--}}
-{{--                            <th scope="row">Last Login At:</th>--}}
-{{--                            <td>{{ $user->last_login_at }}</td>--}}
-{{--                        </tr>--}}
                         </tbody>
                     </table>
                 </div>

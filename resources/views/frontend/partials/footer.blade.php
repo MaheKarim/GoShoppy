@@ -44,11 +44,11 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="courier-type-widget footer-widget mrg-btm-30">
-                    <h6 class="footer text-white">Courier Types</h6>
+                    <h6 class="footer text-white">Our Services</h6>
                     <div class="footer-list">
                         <ul>
-                            <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i> Standard</a></li>
-                            <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i> Express</a></li>
+                            <li><a href="{{ url('/login') }}" title="link"><i class="las la-arrow-circle-right"></i> Login</a></li>
+                            <li><a href="{{ url('/register') }}" title="link"><i class="las la-arrow-circle-right"></i> Register</a></li>
                             <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i>International</a></li>
                             <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i>Ware Housing</a></li>
                             <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i>Overnight</a></li>
