@@ -29,10 +29,11 @@
                                         <li><a href="quotation.html" title="Quotation">Quotation</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="pricing.html" title="pricing">Pricing</a>
+                                <li>
+                                    <a href="{{ url('/faq') }}" title="pricing">FAQ</a>
                                 </li>
-                                <li><a href="{{ url('/') }}" title="FAQ">FAQ</a>
-
+                                <li>
+                                    <a href="{{ url('/register') }}" title="FAQ">Sign Up</a>
                                 </li>
 
                             </ul>
