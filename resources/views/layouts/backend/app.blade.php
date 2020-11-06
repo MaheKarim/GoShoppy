@@ -19,6 +19,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/iziToast.css') }}" rel="stylesheet">
 
+    @stack('maheCSS')
     @stack('css')
     @stack('cssUS')
 </head>
@@ -49,6 +50,7 @@
     <script src="{{ asset('js/script.js') }}"></script>
     @include('vendor.lara-izitoast.toast')
 
+@stack('maheJS')
 @stack('js')
 @stack('jsUS')
 
