@@ -27,30 +27,31 @@
                                         <li><a href="about.html" title="About">About</a></li>
                                         <li><a href="team.html" title="Team">Team</a></li>
                                         <li><a href="quotation.html" title="Quotation">Quotation</a></li>
-                                        <li><a href="faq.html" title="Faq">Faq</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="pricing.html" title="pricing">Pricing</a>
                                 </li>
-                                <li><a href="#" title="blog">Blog +</a>
-                                    <ul>
-                                        <li><a href="blog.html" title="Blog">Blog</a></li>
-                                        <li><a href="blog-details.html" title="Blog Detail">Blog Details</a></li>
-                                    </ul>
+                                <li><a href="{{ url('/') }}" title="FAQ">FAQ</a>
+
                                 </li>
-{{--                                <li>--}}
-{{--                                    <a href="contact.html" title="contact">Contact</a>--}}
-{{--                                </li>--}}
-                                <li>
-                                    <a href="{{ url('/login') }}" title="contact">Login</a>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="navigation-btn">
-                        <a href="#" class="btn btn-primary" title="get quotes">Get Quotes</a>
+                        @if(!Auth::user())
+                        <a href="{{ url('/login') }}" class="btn btn-primary" title="get quotes">Login/Sign Up</a>
+                        @endif
+                        @auth()
+                            @if(Auth::check() && Auth::user()->role->id == 1 ) {
+                                <a href="{{ route('app.dashboard') }}" class="btn btn-primary" title="get quotes">Dashboard</a>
+                             } @else {
+                                <a href="{{ route('user.dashboard.index') }}" class="btn btn-primary" title="get quotes">Dashboard</a>
+                                }
+                                @endif
+                            @endauth
                     </div>
                 </div>
             </div>

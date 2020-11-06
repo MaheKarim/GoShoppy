@@ -2,52 +2,25 @@
 
 @push('wizard')
     <style>
-        .stepwizard-step p {
-            margin-top: 0px;
-            color:#666;
+
+        .form-section{
+            padding-left: 15px;
+            /*display: none;*/
         }
-        .stepwizard-row {
-            display: table-row;
+        .form-section.current{
+            display: inherit;
         }
-        .stepwizard {
-            display: table;
-            width: 100%;
-            position: relative;
+        .btn-info,  .btn-success{
+            margin-top: 10px;
         }
-        .stepwizard-step button[disabled] {
-            /*opacity: 1 !important;
-            filter: alpha(opacity=100) !important;*/
-        }
-        .stepwizard .btn.disabled, .stepwizard .btn[disabled], .stepwizard fieldset[disabled] .btn {
-            opacity:1 !important;
-            color:#bbb;
-        }
-        .stepwizard-row:before {
-            top: 14px;
-            bottom: 0;
-            position: absolute;
-            content:" ";
-            width: 100%;
-            height: 1px;
-            background-color: #ccc;
-            z-index: 0;
-        }
-        .stepwizard-step {
-            display: table-cell;
-            text-align: center;
-            position: relative;
-        }
-        .btn-circle {
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            padding: 6px 0;
-            font-size: 12px;
-            line-height: 1.428571429;
-            border-radius: 15px;
+        .parsley-errors-list{
+            margin: 2px 0 3px;
+            padding: 0;
+            list-style-type: none;
+            color: red;
         }
     </style>
-    @endpush
+@endpush
 @section('content')
     <div class="app-page-title">
         <div class="page-title-wrapper">
@@ -87,107 +60,98 @@
         </div>
         <div class="col-md-9">
             <div class="container">
-                <div class="stepwizard">
-                    <div class="stepwizard-row setup-panel">
-                        <div class="stepwizard-step col-xs-3">
-                            <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
-                            <p><small>Product Description</small></p>
-                        </div>
+             <div class="card">
+                 <div class="card-header text-white bg-info">
+                     <h4>Ship For Me</h4>
+                 </div>
+                 <div class="card-body">
+                     <form class="contact-form" method="POST" action="{{ route('user.ShipForMe.store') }}">
+                         @csrf
 
-                        <div class="stepwizard-step col-xs-3">
-                            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                            <p><small>Receiver Information</small></p>
-                        </div>
-                    </div>
-                </div>
+                         <div class="form-section">
+                             <label for="product_name">Product Name</label>
+                             <input type="text" name="product_name" class="form-control" required>
 
-                <form role="form" method="post" action="{{ route('user.ShipForMe.store') }}">
-                    @csrf
-                    @method('PUT')
-                    <div class="panel panel-primary setup-content" id="step-1">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Product Description</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <label class="control-label">First Name</label>
-                                <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name" />
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Last Name</label>
-                                <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
-                            </div>
-                            <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
-                        </div>
-                    </div>
+                             <label for="product_link">Product Link</label>
+                             <input type="text" name="product_link" class="form-control">
 
+                             <label for="product_weight">Product Weight</label>
+                             <input type="text" name="product_weight" class="form-control" required>
 
-                    <div class="panel panel-primary setup-content" id="step-2">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Receiver Information</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <label class="control-label">Company Name</label>
-                                <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Company Address</label>
-                                <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address" />
-                            </div>
-                            <button class="btn btn-success pull-right" type="submit">Finish!</button>
-                        </div>
-                    </div>
-                </form>
+                             <label for="product_quantity">Product Quantity</label>
+                             <input type="text" name="product_quantity" class="form-control" required>
+                         </div>
+
+                         <div class="form-section">
+                             <label for="recvr_name">Receiver Name</label>
+                             <input type="text" name="recvr_name" class="form-control" required>
+
+                             <label for="recvr_phn_number1">Receiver Phone</label>
+                             <input type="text" name="recvr_phn_number1" class="form-control" required>
+
+                             <label for="recvr_phn_number2">Receiver Phone(Optional)</label>
+                             <input type="text" name="recvr_phn_number2" class="form-control">
+
+                             <label for="recvr_mail">Receiver Email</label>
+                             <input type="text" name="recvr_mail" class="form-control">
+
+                             <label for="recvr_address">Receiver House Address</label>
+                             <textarea  name="recvr_address" class="form-control" required> </textarea>
+
+                             <label for="recvr_upazila">Receiver Upazila</label>
+                             <input type="text" name="recvr_upazila" class="form-control" required>
+
+                             <label for="recvr_zila">Receiver Zila</label>
+                             <input type="text" name="recvr_zila" class="form-control" required>
+                         </div>
+
+                         <div class="form-navigation">
+                             <button type="button" class="previous btn btn-info float-left">Previous</button>
+{{--                             <button type="button" class="next btn btn-info float-right">Next</button>--}}
+                             <button type="submit" class="next btn btn-success float-right">Submit</button>
+                         </div>
+                     </form>
+                 </div>
+             </div>
             </div>
         </div>
     </div>
 
 @endsection
-@push('wizard_js')
 
-    <script>
-    $(document).ready(function () {
+{{--@push('wizard_js')--}}
+{{--    <script>--}}
+{{--        $(function(){--}}
+{{--           var $sections = $('form-section');--}}
 
-        var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
+{{--           function navigateTo(index) {--}}
+{{--               $sections.removeClass('current').eq(index).addClass('current');--}}
+{{--               $('.form-navigation .previous').toggle(index>0);--}}
+{{--               var atTheEnd = index >= $sections.length - 1;--}}
+{{--               $('.form-navigation .next').toggle(!atTheEnd);--}}
+{{--               $('.form-navigation [type=submit]').toggle(atTheEnd);--}}
+{{--           }--}}
 
-        allWells.hide();
+{{--           function curIndex() {--}}
+{{--               return $sections.index($sections.filter('.current'));--}}
+{{--           }--}}
 
-        navListItems.click(function (e) {
-            e.preventDefault();
-            var $target = $($(this).attr('href')),
-                $item = $(this);
+{{--           $('.form-navigation .previous').click(function () {--}}
+{{--               navigateTo(curIndex()-1);--}}
+{{--           });--}}
 
-            if (!$item.hasClass('disabled')) {
-                navListItems.removeClass('btn-success').addClass('btn-default');
-                $item.addClass('btn-success');
-                allWells.hide();
-                $target.show();
-                $target.find('input:eq(0)').focus();
-            }
-        });
+{{--           $('.form-navigation .next').click(function () {--}}
+{{--               $('.contact-form').parsley.whenValidate({--}}
+{{--                   group: 'block-' + curIndex()--}}
+{{--               }).done(function () {--}}
+{{--                    navigateTo(curIndex()+1);--}}
+{{--               })--}}
+{{--            });--}}
 
-        allNextBtn.click(function () {
-            var curStep = $(this).closest(".setup-content"),
-                curStepBtn = curStep.attr("id"),
-                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                curInputs = curStep.find("input[type='text'],input[type='url']"),
-                isValid = true;
-
-            $(".form-group").removeClass("has-error");
-            for (var i = 0; i < curInputs.length; i++) {
-                if (!curInputs[i].validity.valid) {
-                    isValid = false;
-                    $(curInputs[i]).closest(".form-group").addClass("has-error");
-                }
-            }
-
-            if (isValid) nextStepWizard.removeAttr('disabled').trigger('click');
-        });
-
-        $('div.setup-panel div a.btn-success').trigger('click');
-    });
-    </script>
-@endpush
+{{--            $sections.each(function (index, section) {--}}
+{{--                $(section).find(':input').attr('data-parsley-group', 'block'+index);--}}
+{{--            });--}}
+{{--            navigateTo(0);--}}
+{{--        });--}}
+{{--   </script>--}}
+{{--@endpush--}}

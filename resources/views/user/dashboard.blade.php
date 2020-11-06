@@ -15,10 +15,18 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
+    <!-- Notification Start Here -->
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Holy {{ Auth::user()->name }}!</strong> {{ session()->get('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+    <!-- Notification End Here -->
     <div class="tabs-animation">
         <div class="row">
             <div class="col-lg-12 ">
