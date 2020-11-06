@@ -40,12 +40,24 @@ class ShipForMeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'product_name' => 'required|string',
+            'product_weight' => 'required',
+            'product_quantity' => 'required|integer',
+            'recvr_name' => 'required|string',
+            'recvr_phn_number1' => 'required|max:15|min:8',
+            'recvr_phn_number2' => 'string|max:15|min:8',
+            'recvr_address' => 'required|string',
+            'recvr_upazila' => 'required|string',
+            'recvr_zila' => 'required|string',
+        ]);
+
         $config = [
             'table' => 'ship_for_mes',
             'length' => 4,
-            'prefix' => date('ym')
+            'prefix' => date('Ys')
         ];
-        $trackID = IdGenerator::generate($config).date('his').Auth::id();
+        $trackID = IdGenerator::generate($config).date('HI').Auth::id();
 
         $shipformes = new ShipForMe();
         $shipformes->product_name = $request->product_name;

@@ -10,7 +10,7 @@
         .form-section.current{
             display: inherit;
         }
-        .btn-info,  .btn-success{
+        a ,  .btn-success{
             margin-top: 10px;
         }
         .parsley-errors-list{
@@ -69,44 +69,76 @@
                          @csrf
 
                          <div class="form-section">
+                             <!-- error message -->
+                             @if ($errors->any())
+                                 <div class="alert alert-danger">
+                                     <ul>
+                                         @foreach ($errors->all() as $error)
+                                             <li>{{ $error }}</li>
+                                         @endforeach
+                                     </ul>
+                                 </div>
+                         @endif
+                         <!-- error message end -->
                              <label for="product_name">Product Name</label>
-                             <input type="text" name="product_name" class="form-control" required>
+                             <input type="text" name="product_name" class="form-control @error('product_name') is-invalid @enderror" value="{{ old('product_name') }}" required>
+
+                             @error('product_name')
+                             <div class="alert alert-danger">{{ $message }}</div>
+                             @enderror
 
                              <label for="product_link">Product Link</label>
-                             <input type="text" name="product_link" class="form-control">
+                             <input type="text" name="product_link" class="form-control" value="{{ old('') }}">
 
                              <label for="product_weight">Product Weight</label>
-                             <input type="text" name="product_weight" class="form-control" required>
+                             <input type="text" name="product_weight" class="form-control @error('product_weight') is-invalid @enderror" value="{{ old('product_weight') }}" required>
 
+                             @error('product_weight')
+                             <div class="alert alert-danger">{{ $message }}</div>
+                             @enderror
                              <label for="product_quantity">Product Quantity</label>
-                             <input type="text" name="product_quantity" class="form-control" required>
-                         </div>
+                             <input type="text" name="product_quantity" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('product_quantity') }}" required>
 
+                             @error('product_quantity')
+                             <div class="alert alert-danger">{{ $message }}</div>
+                             @enderror
+                         </div>
+                            <br>
                          <div class="form-section">
                              <label for="recvr_name">Receiver Name</label>
-                             <input type="text" name="recvr_name" class="form-control" required>
+                             <input type="text" name="recvr_name" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_name') }}" required>
+
+                             @error('recvr_name')
+                             <div class="alert alert-danger">{{ $message }}</div>
+                             @enderror
 
                              <label for="recvr_phn_number1">Receiver Phone</label>
-                             <input type="text" name="recvr_phn_number1" class="form-control" required>
-
+                             <input type="text" name="recvr_phn_number1" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_phn_number1') }}" required>
+                             @error('recvr_phn_number1')
+                             <div class="alert alert-danger">{{ $message }}</div>
+                             @enderror
                              <label for="recvr_phn_number2">Receiver Phone(Optional)</label>
-                             <input type="text" name="recvr_phn_number2" class="form-control">
+                             <input type="text" name="recvr_phn_number2" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_phn_number2') }}">
+
+                             @error('recvr_phn_number2')
+                             <div class="alert alert-danger">{{ $message }}</div>
+                             @enderror
 
                              <label for="recvr_mail">Receiver Email</label>
-                             <input type="text" name="recvr_mail" class="form-control">
+                             <input type="text" name="recvr_mail" class="form-control" value="{{ old('recvr_mail') }}">
 
                              <label for="recvr_address">Receiver House Address</label>
                              <textarea  name="recvr_address" class="form-control" required> </textarea>
 
                              <label for="recvr_upazila">Receiver Upazila</label>
-                             <input type="text" name="recvr_upazila" class="form-control" required>
+                             <input type="text" name="recvr_upazila" class="form-control" required value="{{ old('recvr_upazila') }}">
 
                              <label for="recvr_zila">Receiver Zila</label>
-                             <input type="text" name="recvr_zila" class="form-control" required>
+                             <input type="text" name="recvr_zila" class="form-control" value="{{ old('recvr_zila') }}" required>
                          </div>
 
                          <div class="form-navigation">
-                             <button type="button" class="previous btn btn-info float-left">Previous</button>
+                             <a href="{{ url('user/dashboard') }}" type="button" class="previous btn btn-danger float-left">Cancel</a>
 {{--                             <button type="button" class="next btn btn-info float-right">Next</button>--}}
                              <button type="submit" class="next btn btn-success float-right">Submit</button>
                          </div>
