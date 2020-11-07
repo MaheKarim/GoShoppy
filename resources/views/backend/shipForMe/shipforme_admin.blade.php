@@ -52,9 +52,12 @@
                                 <td>
                                     <div class="widget-subheading opacity-7">
                                         @if ($order->status->id == 1)
-                                            <span class="badge badge-info">{{ $order->status->status }}</span>
+                                            <span class="badge badge-warning">{{ $order->status->status }}</span>
+                                        @elseif ($order->status->id == 2)
+
+                                            <span class="badge badge-danger">{{ $order->status->status }}</span>
                                         @else
-                                            <span class="badge badge-danger">No role found :(</span>
+                                            <span class="badge badge-primary">{{ $order->status->status }}</span>
                                         @endif
                                     </div>
                                 </td>
@@ -66,7 +69,7 @@
                                             class="fas fa-eye"></i>
                                         <span>Show</span>
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="{{ route('app.users.edit',$order->id) }}"><i
+                                    <a class="btn btn-info btn-sm" href="{{ route('app.shipforme-orders.edit',$order->id) }}"><i
                                             class="fas fa-edit"></i>
                                         <span>Edit</span>
                                     </a>
@@ -76,7 +79,7 @@
                                         <span>Delete</span>
                                     </button>
                                     <form id="delete-form-{{ $order->id }}"
-                                          action="{{ route('app.users.destroy',$order->id) }}" method="POST"
+                                          action="{{ route('app.shipforme-orders.destroy', $order->id) }}" method="POST"
                                           style="display: none;">
                                         @csrf()
                                         @method('DELETE')

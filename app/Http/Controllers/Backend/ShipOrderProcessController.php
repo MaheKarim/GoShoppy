@@ -59,9 +59,11 @@ class ShipOrderProcessController extends Controller
      * @param  \App\Models\ShipForMe  $shipForMe
      * @return \Illuminate\Http\Response
      */
-    public function edit(ShipForMe $shipForMe)
+    public function edit(ShipForMe $shipForMe, $id)
     {
-        //
+        $orders = ShipForMe::find($id);
+
+        return view('backend.shipForMe.update_shipforme', compact('orders'));
     }
 
     /**
@@ -73,7 +75,13 @@ class ShipOrderProcessController extends Controller
      */
     public function update(Request $request, ShipForMe $shipForMe)
     {
-        //
+        ShipForMe::findOrfail($request->comment_id)->update([
+            'comment' => $request->comment,
+            'delivery_time' => $request->delivery_time,
+            'status_id' => $request->status_id,
+        ]);
+        notify()->success("Order Status Updated Successfully","Success");
+        return redirect()->route('app.shipforme-orders.index');
     }
 
     /**
@@ -82,8 +90,12 @@ class ShipOrderProcessController extends Controller
      * @param  \App\Models\ShipForMe  $shipForMe
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ShipForMe $shipForMe)
+    public function destroy(ShipForMe $shipForMe, $id)
     {
-        //
+        $orders = ShipForMe::find($id);
+        $orders->delete();
+
+        notify()->error("Order Deleted Successfully","Delete");
+        return back();
     }
 }
