@@ -2,6 +2,7 @@
 
     namespace Database\Seeders;
 
+use App\Models\CourierType;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +20,6 @@ class DatabaseSeeder extends Seeder
          $this->call(USAddressSeeder::class);
          $this->call(StatusSeeder::class);
          $this->call(FAQSeeder::class);
-
+         $this->call(CourierType::class);
     }
 }

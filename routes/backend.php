@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\Backend\CourierTypeController;
     use App\Http\Controllers\Backend\DashboardController;
     use App\Http\Controllers\Backend\FAQController;
     use App\Http\Controllers\Backend\ProfileController;
@@ -20,8 +21,6 @@
 |
 */
 
-
-
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
@@ -29,13 +28,15 @@
     Route::resource('status', StatusController::class);
     Route::resource('faq-system', FAQController::class);
 
+    // Ship For Me Admin Access
     Route::resource('shipforme-orders', ShipOrderProcessController::class);
 
 
     // Profile Controller
-
     Route::get('profile', [ProfileController::class,'index'])->name('profile.index');
     Route::put('profile', [ProfileController::class,'update'])->name('profile.update');
-
     Route::get('profile/password', [ProfileController::class,'changePassword'])->name('password.index');
     Route::put('profile/password', [ProfileController::class,'updatePassword'])->name('password.update');
+
+    // Courier Type Controller
+    Route::resource('courier-types', CourierTypeController::class);

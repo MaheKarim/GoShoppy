@@ -81,6 +81,12 @@
                         Status
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('app.courier-types.index') }}" class="{{ Request::is('app/courier-types*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-safe"></i>
+                        Courier Type's
+                    </a>
+                </li>
 
                 <li class="app-sidebar__heading">Website Functionalities</li>
                 <li>
