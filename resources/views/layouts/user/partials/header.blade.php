@@ -59,8 +59,8 @@
                                 <div tabindex="-1" role="menu" aria-hidden="true"
                                      class="dropdown-menu dropdown-menu-right">
                                     <a href="{{ route('user.profileIndex') }}" tabindex="0" class="dropdown-item">Profile Update</a>
+                                    <a href="{{ route('user.profile.password.change') }}" tabindex="0" class="dropdown-item">Password Change</a>
                                     <a href="#" tabindex="0" class="dropdown-item">Settings</a>
-                                    <a href="#" tabindex="0" class="dropdown-item">Password Change</a>
                                     <div tabindex="-1" class="dropdown-divider"></div>
                                     <button
                                         class="dropdown-item" onclick="event.preventDefault();

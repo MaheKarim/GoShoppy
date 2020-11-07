@@ -19,24 +19,29 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+    // Server Command
     Route::get('/optimize', [FrontendController::class, 'optimize']);
-    Route::get('/clear', [FrontendController::class, 'optimize']);
-    Route::get('/install', [FrontendController::class, 'optimize']);
+    Route::get('/clear', [FrontendController::class, 'clear']);
+    Route::get('/install', [FrontendController::class, 'install']);
 
-Route::resource('/', FrontendController::class);
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::resource('/', FrontendController::class);
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
   // FAQ Page
-
     Route::get('/faq', [SiteController::class,'show']);
 
-Auth::routes();
+    Auth::routes();
+
+
   // User Route Start From Here
 Route::group(['as'=>'user.', 'prefix'=>'user', 'middleware'=>['auth']], function (){
     Route::resource('dashboard', DashboardController::class);
     Route::get('profile', [ProfileController::class,'index'])->name('profileIndex');
     Route::put('profile', [ProfileController::class,'update'])->name('profileUpdate');
+    // Password Update
+    Route::get('profile/security', [ProfileController::class,'changePassword'])->name('profile.password.change');
+    Route::put('profile/security', [ProfileController::class,'updatePassword'])->name('profile.password.update');
+
 
     // Ship For Me
     Route::resource('ShipForMe', ShipForMeController::class);

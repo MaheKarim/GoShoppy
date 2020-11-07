@@ -79,16 +79,10 @@
                             </a>
                         </li>
                         <li>
-                            <a href="forms-layouts.html">
+                            <a href="{{ route('user.profile.password.change') }}">
                                 <i class="metismenu-icon"></i>Password Change
                             </a>
                         </li>
-                        <li>
-                            <a href="forms-validation.html">
-                                <i class="metismenu-icon"></i>Profile View
-                            </a>
-                        </li>
-
                     </ul>
                 </li>
             </ul>
