@@ -50,7 +50,7 @@
                 </li>
                 <li>
                     <a href="{{ url('app/shipforme-orders') }}" class="{{ Request::is('app/shipforme-orders*') ? 'mm-active' : '' }}">
-                        <i class="metismenu-icon pe-7s-cash"></i>
+                        <i class="metismenu-icon pe-7s-plugin"></i>
                         ShipForMe - Orders
                     </a>
                 </li>
@@ -73,6 +73,12 @@
                     <a href="{{ route('app.users.index') }}" class="{{ Request::is('app/users*') ? 'mm-active' : ''}}">
                         <i class="metismenu-icon pe-7s-users"></i>
                         Users
+                    </a>
+                </li>
+                <li >
+                    <a href="{{ route('app.payment-service.index') }}" class="{{ Request::is('app/payment-service*') ? 'mm-active' : ''}}">
+                        <i class="metismenu-icon pe-7s-cash"></i>
+                        Payment Service
                     </a>
                 </li>
                 <li class="app-sidebar__heading">System Functionalities</li>

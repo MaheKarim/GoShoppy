@@ -10,6 +10,7 @@
     use App\Http\Controllers\Backend\StatusController;
     use App\Http\Controllers\Backend\USAddressController;
     use App\Http\Controllers\Backend\UserController;
+    use App\Http\Controllers\PaymentServiceController;
     use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +43,5 @@
     Route::resource('courier-types', CourierTypeController::class);
     // GetQuoteForm - Frontend Page
     Route::resource('client-quote', GetQuoteFormController::class);
+    // Payment Service Controller
+    Route::resource('payment-service', PaymentServiceController::class);

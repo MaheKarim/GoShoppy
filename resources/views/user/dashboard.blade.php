@@ -57,21 +57,18 @@
                                 <div class="card-body">
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab-eg3-0" role="tabpanel">
-
-                                                @foreach($usaaddress as $item)
+                                            @foreach($usaaddress as $item)
                                                  <h5 align="center">
-                                                          <td>{{ $item->house_number }},</td> <br>
-                                                          <td>{{ $item->street_number }},</td> <br>
-                                                         <td> {{ $item->state_name }}, {{ $item->postal_code }},</td> <br>
-                                                     <i class=" lnr-smartphone icon-gradient bg-mixed-hopes">  {{ $item->telephone_number }}</i>
+                                                     <td>{{ $item->house_number }},</td> <br>
+                                                     <td>{{ $item->street_number }},</td> <br>
+                                                     <td> {{ $item->state_name }}, {{ $item->postal_code }},</td> <br>
+                                                     TEL: {{ $item->telephone_number }}
                                                  </h5>
-                                                @endforeach
-
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         <li class="p-0 list-group-item">
                             <div class="grid-menu grid-menu-2col">
                                 <div class="no-gutters row">
@@ -98,7 +95,7 @@
                                             <a
                                                 class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-success">
                                                 <i class="lnr-bus text-success opacity-7 btn-icon-wrapper mb-2"></i>
-                                                Deposit
+                                                Pay Now
                                             </a>
                                         </div>
                                     </div>
@@ -131,7 +128,143 @@
             </div>
         </div>
        <!-- row div -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-body">
+                        <h5 class="pb-3 card-title">Payment Option</h5>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="dropdown-menu-header">
+                                    <div class="dropdown-menu-header-inner bg-primary">
+                                        <div class="menu-header-image" style="background-image: url('/assets/images/dropdown-header/abstract1.jpg');">
+                                        </div>
+                                        <div class="menu-header-content">
+                                            <h5 class="menu-header-title">Nagad</h5>
+                                            <h6 class="menu-header-subtitle">Pay Your Bill To Our Nagad Service</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav flex-column">
+                                    <li class="nav-item-header nav-item">Activity</li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">
+                                            <i class="nav-link-icon pe-7s-chat"> </i><span>01778966356</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item-header nav-item"> Account Type</li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">
+                                            <i class="nav-link-icon pe-7s-config"></i><span>Personal Number</span>
+                                            <div class="ml-auto badge badge-success">New</div>
+                                        </a>
+                                    </li>
 
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dropdown-menu-header">
+                                    <div class="dropdown-menu-header-inner bg-danger">
+                                        <div class="menu-header-image opacity-2" style="background-image: url('/assets/images/dropdown-header/abstract2.jpg');"></div>
+                                        <div class="menu-header-content">
+                                            <h5 class="menu-header-title">bKash</h5>
+                                            <h6 class="menu-header-subtitle">Manage all of your options</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav flex-column">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item-header nav-item">Service Action</li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link">
+                                                <i class="nav-link-icon pe-7s-chat"> </i><span>01521207502</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item-header nav-item">Account Type</li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link">
+                                                <i class="nav-link-icon pe-7s-config"></i><span>Merchant</span>
+                                                <div class="ml-auto badge badge-success">New</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dropdown-menu-header">
+                                    <div class="dropdown-menu-header-inner bg-success">
+                                        <div class="menu-header-image opacity-1" style="background-image: url('/assets/images/dropdown-header/abstract3.jpg');"></div>
+                                        <div class="menu-header-content">
+                                            <h5 class="menu-header-title">Rocket</h5>
+                                            <h6 class="menu-header-subtitle">Manage all of your options</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav flex-column">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item-header nav-item">Activity</li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link">
+                                                <i class="nav-link-icon pe-7s-chat"> </i><span>Chat</span>
+                                                <div class="ml-auto badge badge-pill badge-info">8</div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item-header nav-item">My Account</li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link">
+                                                <i class="nav-link-icon pe-7s-config"></i><span>Settings</span>
+                                                <div class="ml-auto badge badge-success">New</div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link">
+                                                <i class="nav-link-icon pe-7s-coffee"></i><span>Messages</span>
+                                                <div class="ml-auto badge badge-warning">512</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dropdown-menu-header">
+                                    <div class="dropdown-menu-header-inner bg-dark">
+                                        <div class="menu-header-image opacity-1" style="background-image: url('/assets/images/dropdown-header/abstract3.jpg');"></div>
+                                        <div class="menu-header-content">
+                                            <h5 class="menu-header-title">Paypal</h5>
+                                            <h6 class="menu-header-subtitle">Manage all of your options</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav flex-column">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item-header nav-item">Activity</li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link">
+                                                <i class="nav-link-icon pe-7s-chat"> </i><span>01778966356</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item-header nav-item">My Account</li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link">
+                                                <i class="nav-link-icon pe-7s-config"></i><span>Settings</span>
+                                                <div class="ml-auto badge badge-success">New</div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" class="nav-link">
+                                                <i class="nav-link-icon pe-7s-coffee"></i><span>Messages</span>
+                                                <div class="ml-auto badge badge-warning">512</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                </div>
+            </div>
+       <!-- row div -->
     </div>
 
 @endsection
