@@ -61,7 +61,7 @@ class PaymentServiceController extends Controller
      */
     public function show(PaymentService $paymentService)
     {
-        //
+
     }
 
     /**

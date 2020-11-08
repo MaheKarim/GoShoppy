@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\PaymentService;
 use App\Models\USAddress;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,9 +17,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-
+        $payments = PaymentService::all();
         $usaaddress = USAddress::all();
-        return  view('user.dashboard', compact('usaaddress'));
+        return  view('user.dashboard', compact('usaaddress', 'payments'));
     }
 
     /**
