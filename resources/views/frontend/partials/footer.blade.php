@@ -49,8 +49,8 @@
                         <ul>
                             <li><a href="{{ url('/login') }}" title="link"><i class="las la-arrow-circle-right"></i> Login</a></li>
                             <li><a href="{{ url('/register') }}" title="link"><i class="las la-arrow-circle-right"></i> Register</a></li>
-                            <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i>International</a></li>
-                            <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i>Ware Housing</a></li>
+                            <li><a href="{{ url('/order-tracking') }}" title="link"><i class="las la-arrow-circle-right"></i>Order Tracking</a></li>
+                            <li><a href="{{ url('/faq') }}" title="link"><i class="las la-arrow-circle-right"></i>FAQ</a></li>
                             <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i>Overnight</a></li>
                             <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i>Pallet</a></li>
                         </ul>
@@ -123,7 +123,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="copyright-block">
-                        <p>&copy; {{ now()->year }} <a href="index.html" title="exelsure courier service">GoShoppy</a> |  All Rights Reserved.  </p>
+                        <p>&copy; {{ now()->year }} <a href="{{ url('/') }}" title="Gochii courier service">GoShoppy</a> |  All Rights Reserved.  </p>
                     </div>
                 </div>
                 <div class="col-md-6 text-right">

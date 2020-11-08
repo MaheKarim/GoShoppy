@@ -27,7 +27,7 @@
             <div class="home-block">
                 <h1 class="home-slider-heading text-center text-white">Choose the plan to deliver!</h1>
                 <div class="home-form">
-                    <form class="form-control" method="POST" action="{{ route('store') }}">
+                    <form  method="POST" action="{{ route('store') }}">
                         @csrf
 
                     <div class="row">
@@ -40,7 +40,7 @@
                         <div class="col-lg-3 col-md-5">
                             <label for="client_contact">Email / PHN <span>*</span></label>
                             <div class="form-group">
-                                <input type="text" id="client_contact" name="client_contact" class="form-control" placeholder="Email" required>
+                                <input type="text" id="client_contact" name="client_contact" class="form-control" placeholder="Email / PHN " required>
                             </div>
                         </div>
                         <div class="col-lg-3">

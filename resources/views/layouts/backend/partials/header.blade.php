@@ -41,12 +41,10 @@
     </div>
     <div class="app-header__content">
         <div class="app-header-left">
-
             <ul class="header-menu nav">
                 <li class="dropdown nav-item">
                     <a href="{{ url('/') }}" target="_blank" class="nav-link">
                         <i class="nav-link-icon fa fa-cog">
-
                         </i>
                         Visit Site
                     </a>
@@ -54,7 +52,6 @@
             </ul>
         </div>
         <div class="app-header-right">
-            <div class="header-btn-lg pr-0">
                 <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
                         <div class="widget-content-left">
@@ -65,6 +62,7 @@
                                         class="rounded-circle" src="{{ Auth::user()->getFirstMediaUrl('avatar') }}" alt="User Profile Image"/>
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
+
                                 <div tabindex="-1" role="menu" aria-hidden="true"
                                      class="dropdown-menu dropdown-menu-right">
                                    <a href="{{ route('app.profile.index') }}" tabindex="0" class="dropdown-item">Profile Update</a>
@@ -79,11 +77,17 @@
                                         @csrf
                                     </form>
                                 </div>
+                                <div class="header-btn-lg pr-0">
+                                    <div class="widget-content-right">
+                                        <div class="widget-heading">{{ Auth::user()->name }}</div>
+                                        <div class="widget-subheading opacity-8">Personal Balance: <b> {{ Auth::user()->deposit_balance }} </b> BDT</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
 
         </div>
     </div>

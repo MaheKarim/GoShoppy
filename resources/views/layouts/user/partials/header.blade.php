@@ -33,19 +33,17 @@
     </div>
     <div class="app-header__content">
         <div class="app-header-left">
-            <div class="search-wrapper">
-                <div class="input-holder">
-                    <input type="text" class="search-input" placeholder="Type to search">
-                    <button class="search-icon"><span></span></button>
-                </div>
-                <button class="close"></button>
-            </div>
-
+            <ul class="header-menu nav">
+                <li class="dropdown nav-item">
+                    <a href="{{ url('/') }}" target="_blank" class="nav-link">
+                        <i class="nav-link-icon fa fa-cog">
+                        </i>
+                        Visit Site
+                    </a>
+                </li>
+            </ul>
         </div>
         <div class="app-header-right">
-
-
-            <div class="header-btn-lg pr-0">
                 <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
                         <div class="widget-content-left">
@@ -60,7 +58,6 @@
                                      class="dropdown-menu dropdown-menu-right">
                                     <a href="{{ route('user.profileIndex') }}" tabindex="0" class="dropdown-item">Profile Update</a>
                                     <a href="{{ route('user.profile.password.change') }}" tabindex="0" class="dropdown-item">Password Change</a>
-                                    <a href="#" tabindex="0" class="dropdown-item">Settings</a>
                                     <div tabindex="-1" class="dropdown-divider"></div>
                                     <button
                                         class="dropdown-item" onclick="event.preventDefault();
@@ -73,15 +70,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading">{{ Auth::user()->name }}</div>
-                            <div class="widget-subheading">/{{ Auth::user()->role->slug }} </div>
+                        <div class="header-btn-lg pr-0">
+                            <div class="widget-content-right">
+                                <div class="widget-heading">{{ Auth::user()->name }}</div>
+                                <div class="widget-subheading opacity-8">Personal Balance: <b> {{ Auth::user()->deposit_balance }} </b> BDT</div>
+                            </div>
                         </div>
 
                     </div>
                 </div>
-            </div>
-
         </div>
     </div>
 </div>

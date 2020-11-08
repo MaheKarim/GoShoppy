@@ -10,9 +10,6 @@
                     <i class="pe-7s-home icon-gradient bg-ripe-malin"></i>
                 </div>
                 <div>User Dashboard
-                    <div class="page-title-subheading">This dashboard was created as an example of the
-                        flexibility that Architect offers.
-                    </div>
                 </div>
             </div>
         </div>
@@ -45,7 +42,7 @@
                                     <h6 class="menu-header-subtitle">You're our , {{ Auth::user()->role->slug }}</h6>
                                 </div>
                                 <div class="menu-header-btn-pane">
-                                    <button class="btn btn-success">View Profile</button>
+                                    <a href="{{ route('user.profileIndex') }}" class="btn btn-success">View Profile</a>
                                 </div>
                             </div>
                         </div>
@@ -107,10 +104,10 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="p-1">
-                                            <button
+                                            <a href="{{ url('/faq') }}"
                                                 class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-focus">
                                                 <i class="lnr-gift text-focus opacity-7 btn-icon-wrapper mb-2"> </i>FAQ
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -133,53 +130,8 @@
                     <div class="mb-2 mr-2 badge badge-dot badge-dot-sm badge-dark">Dark</div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="main-card mb-3 card">
-                    <div class="card-header">Product / Country / Receiver List
-                        <div class="btn-actions-pane-right">
-                            <div role="group" class="btn-group-sm btn-group">
-                                <button class="active btn btn-focus">Last Week</button>
-                                <button class="btn btn-focus">All Month</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
-                            <thead>
-                            <tr>
-                                <th class="text-center">#</th>
-                                <th>Track ID</th>
-                                <th class="text-center">City</th>
-                                <th class="text-center">Status</th>
-                                <th class="text-center">Sales</th>
-                                <th class="text-center">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="text-center text-muted">#345</td>
-                                <td class="text-center">Mahe K.</td>
-                                <td class="text-center">Madrid</td>
-                                <td class="text-center">
-                                    <div class="badge badge-warning">Pending</div>
-                                </td>
-                                <td class="text-center">
-                                   check
-                                </td>
-                                <td class="text-center">
-                                    <button type="button" id="PopoverCustomT-1"
-                                            class="btn btn-primary btn-sm">Details
-                                    </button>
-                                </td>
-                            </tr>
+       <!-- row div -->
 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 @endsection
