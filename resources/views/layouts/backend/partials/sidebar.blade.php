@@ -54,6 +54,13 @@
                         ShipForMe - Orders
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('app/client-quote') }}" class="{{ Request::is('app/client-quote*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-right-arrow"></i>
+                        Client Quote
+                    </a>
+                </li>
+
                 <li class="app-sidebar__heading">Management Section</li>
                 <li >
                     <a href="{{ route('app.roles.index') }}" class="{{ Request::is('app/roles*') ? 'mm-active' : ''}}">

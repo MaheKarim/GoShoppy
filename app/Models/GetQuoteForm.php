@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CourierType extends Model
+class GetQuoteForm extends Model
 {
     use HasFactory;
+
     protected $guarded = ['id'];
 
-    public function getquotes()
+    public function courier()
     {
-        return $this->belongsTo(GetQuoteForm::class);
+        return $this->hasMany(CourierType::class);
     }
 }

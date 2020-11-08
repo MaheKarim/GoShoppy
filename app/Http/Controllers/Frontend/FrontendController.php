@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\FAQ;
+use App\Models\GetQuoteForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -15,8 +16,11 @@ class FrontendController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        return view('frontend.welcome');
+       $getquotes = GetQuoteForm::all();
+      //  dd($getquotes);
+        return view('frontend.welcome', compact('getquotes'));
     }
 
     /**
@@ -26,7 +30,7 @@ class FrontendController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -37,7 +41,15 @@ class FrontendController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $getquotes = new GetQuoteForm;
+        $getquotes->client_name = $request->client_name;
+        $getquotes->client_contact= $request->client_contact;
+        $getquotes->couriertype_id = $request->couriertype_id;
+        $getquotes->save();
+
+        notify()->success('Sent Successfully!','Quote');
+        return back();
     }
 
     /**

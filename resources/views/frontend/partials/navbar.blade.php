@@ -18,19 +18,19 @@
                                 </li>
                                 <li><a href="#" title="services">Services +</a>
                                     <ul>
-                                        <li><a href="services.html" title="Services">Services</a></li>
-                                        <li><a href="service-details.html" title="Service Details">Service Details</a></li>
+                                        <li><a href="services.html" title="Services">Ship For Me</a></li>
+                                        <li><a href="service-details.html" title="Service Details">Buy For Me</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#" title="Pages">Pages +</a>
                                     <ul>
-                                        <li><a href="about.html" title="About">About</a></li>
+                                        <li><a href="{{ url('/faq') }}" title="faq">FAQ</a></li>
                                         <li><a href="team.html" title="Team">Team</a></li>
                                         <li><a href="quotation.html" title="Quotation">Quotation</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/faq') }}" title="pricing">FAQ</a>
+                                    <a href="{{ url('order-tracking') }}" title="order-tracking">Order Track</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('/register') }}" title="FAQ">Sign Up</a>

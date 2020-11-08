@@ -3,6 +3,7 @@
 
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\SiteController;
+    use App\Http\Controllers\TrackController;
     use App\Http\Controllers\User\DashboardController;
     use App\Http\Controllers\Frontend\FrontendController;
     use App\Http\Controllers\User\ProfileController;
@@ -47,3 +48,7 @@ Route::group(['as'=>'user.', 'prefix'=>'user', 'middleware'=>['auth']], function
     Route::resource('ShipForMe', ShipForMeController::class);
 });
 
+   // Track Your Order
+
+  Route::get('/order-tracking', [TrackController::class, 'index'])->name('order.track');
+  Route::get('/order-tracking/result', [TrackController::class, 'search'])->name('order.search');

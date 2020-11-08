@@ -27,35 +27,38 @@
             <div class="home-block">
                 <h1 class="home-slider-heading text-center text-white">Choose the plan to deliver!</h1>
                 <div class="home-form">
+                    <form class="form-control" method="POST" action="{{ route('store') }}">
+                        @csrf
+
                     <div class="row">
                         <div class="col-lg-3 col-md-7">
-                            <label for="name">Name <span>*</span></label>
+                            <label for="client_name">Name <span>*</span></label>
                             <div class="form-group">
-                                <input type="text" id="name" class="form-control" placeholder="Full Name" required>
+                                <input type="text" name="client_name" id="client_name" class="form-control" placeholder="Full Name" required>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-5">
-                            <label for="Email">Email <span>*</span></label>
+                            <label for="client_contact">Email / PHN <span>*</span></label>
                             <div class="form-group">
-                                <input type="Email" id="Email" class="form-control" placeholder="Email" required>
+                                <input type="text" id="client_contact" name="client_contact" class="form-control" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <label for="citizenship-box">Select Courier Type<span>*</span></label>
-                            <select class="form-control" id="citizenship-box">
-                                <option>Standard Courier</option>
-                                <option>Express Courier</option>
-                                <option>Dooo to Door</option>
-                                <option>Pallete</option>
-                                <option>Over Night</option>
+                            <label for="couriertype_id">Select Courier Type<span>*</span></label>
+                            <select class="form-control" name="couriertype_id" id="couriertype_id">
+                                @php($couriertypes = \App\Models\CourierType::all())
+                                @foreach ($couriertypes as $item)
+                                    <option value="{{ $item->id }}">{{ $item->courier_type_name }}  </option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-lg-3">
                             <div class="request-button">
-                                <button type="button" class="btn btn-request">SEND REQUEST<i class="las la-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-request">SEND REQUEST<i class="las la-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
                 <div class="home-list text-white">
                     <ul>

@@ -5,7 +5,7 @@
         <div class="page-title-wrapper">
             <div class="page-title-heading">
                 <div class="page-title-icon">
-                    <i class="pe-7s-gleam icon-gradient bg-ripe-malin"></i>
+                    <i class="pe-7s-safe icon-gradient bg-ripe-malin"></i>
                 </div>
                 <div>
                     {{ isset($couriers) ? 'Edit' : 'Create' }} Status Management

@@ -101,7 +101,6 @@ class CourierTypeController extends Controller
     {
         $courierType->delete();
         notify()->warning('Courier Type Deleted','Successfully');
-
         return back();
     }
 }

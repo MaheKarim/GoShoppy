@@ -9,17 +9,11 @@
         <div class="page-title-wrapper">
             <div class="page-title-heading">
                 <div class="page-title-icon">
-                    <i class="pe-7s-safe icon-gradient bg-ripe-malin"></i>
+                    <i class="pe-7s-right-arrow icon-gradient bg-ripe-malin"></i>
                 </div>
                 <div>
-                    Courier Type Management
+                    Client Quotes
                 </div>
-            </div>
-            <div class="page-title-actions">
-                <a href="{{ route('app.courier-types.create') }}" class="btn-shadow mr-3 btn btn-primary">
-                    <i class="fa fa-plus-square"></i>
-                    Add Courier Type
-                </a>
             </div>
         </div>
     </div>
@@ -37,37 +31,33 @@
                             <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th class="text-center">Courier Service Name</th>
-                                <th class="text-center">Courier Service Created</th>
+                                <th class="text-center">Client Name</th>
+                                <th class="text-center">Client Email/PHN</th>
+                                <th class="text-center">Client Service</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($couriers as $key=> $courier)
+                            @foreach($getquotes as $key=> $getquote)
                                 <tr>
                                     <td class="text-center text-muted">{{ $key+1 }}</td>
-                                    <td class="text-center">{{ $courier->courier_type_name }}</td>
-                                    <td class="text-center">{{ $courier->created_at->diffForHumans() }}</td>
+                                    <td class="text-center">{{ $getquote->client_name }}</td>
+                                    <td class="text-center">{{ $getquote->client_contact }}</td>
+                                    <td class="text-center">{{ $getquote->couriertype_id }}</td>
+                                    <td class="text-center">{{ $getquote->created_at->diffForHumans() }}</td>
 
                                     <td class="text-center">
-                                        <a href="{{ route('app.courier-types.edit', $courier->id) }}"
-                                           class="btn btn-info btn-sm">
-                                            <i class="fas fa-edit"></i>
-                                            <span>Edit</span>
-                                        </a>
-                                        @if(!($courier->deletable ==true))
-                                            <button type="button" onclick="deleteData({{ $courier->id }})"
+                                            <button type="button" onclick="deleteData({{ $getquote->id }})"
                                                     class="btn btn-danger btn-sm">
                                                 <i class="fas fa-trash-alt"></i>
                                                 <span>Delete</span>
                                             </button>
-                                            <form id="delete-form-{{ $courier->id }}"
-                                                  action="{{ route('app.courier-types.destroy', $courier->id) }}" method="POST"
+                                            <form id="delete-form-{{ $getquote->id }}"
+                                                  action="{{ route('app.client-quote.destroy', $getquote->id) }}" method="POST"
                                                   style="display: none;">
                                                 @csrf
                                                 @method('DELETE ')
                                             </form>
-                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

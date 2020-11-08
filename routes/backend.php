@@ -3,6 +3,7 @@
     use App\Http\Controllers\Backend\CourierTypeController;
     use App\Http\Controllers\Backend\DashboardController;
     use App\Http\Controllers\Backend\FAQController;
+    use App\Http\Controllers\Backend\GetQuoteFormController;
     use App\Http\Controllers\Backend\ProfileController;
     use App\Http\Controllers\Backend\RoleController;
     use App\Http\Controllers\Backend\ShipOrderProcessController;
@@ -31,7 +32,6 @@
     // Ship For Me Admin Access
     Route::resource('shipforme-orders', ShipOrderProcessController::class);
 
-
     // Profile Controller
     Route::get('profile', [ProfileController::class,'index'])->name('profile.index');
     Route::put('profile', [ProfileController::class,'update'])->name('profile.update');
@@ -40,3 +40,5 @@
 
     // Courier Type Controller
     Route::resource('courier-types', CourierTypeController::class);
+    // GetQuoteForm - Frontend Page
+    Route::resource('client-quote', GetQuoteFormController::class);

@@ -117,15 +117,15 @@
                             <td>{{ $order->User->email }}</td>
                         </tr>
                         <tr>
-                            <th>Sender PHN NO</th>
+                            <th>Sender State Name</th>
                             <td>{{ $order->User->state_name }}</td>
                         </tr>
                         <tr>
-                            <th>Sender PHN NO</th>
+                            <th>Sender Country</th>
                             <td>{{ $order->User->current_country }}</td>
                         </tr>
                         <tr>
-                            <th>Sender PHN NO</th>
+                            <th>Sender Balance</th>
                             <td>{{ $order->User->deposit_balance }} BDT </td>
                         </tr>
                         </tbody>

@@ -83,22 +83,15 @@
                         <button class="btn btn-primary" type="submit" name="submit">Your Question</button>
                     </form>
                 </div>
-                <div class="helpline-section">
-                    <div class="helpline-content text-center">
-                        <h4>Need Consultancy Help</h4>
-                        <p>Gatherin galso sprit moving shall flow</p>
-                        <button class="btn btn-primary" type="submit">Contact Us</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- faq end-->
 
-<!-- clients start-->
-@include('frontend.partials.clientimage')
-<!-- clients end-->
+<!-- clients Image-->
+
+<!-- clients Image end-->
 
 <!-- footer start-->
 <!-- footer end-->
@@ -110,6 +103,4 @@
 </body>
 <!-- body end -->
 
-
-<!-- Mirrored from capricorn-theme.net/html/excelsure/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2020 03:31:54 GMT -->
 </html>
