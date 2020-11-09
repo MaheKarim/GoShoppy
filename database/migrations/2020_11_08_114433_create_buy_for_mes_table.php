@@ -15,13 +15,16 @@ class CreateBuyForMesTable extends Migration
     {
         Schema::create('buy_for_mes', function (Blueprint $table) {
             $table->id();
-            $table->string('bfm_product_name');
-            $table->string('bfm_product_url');
-            $table->string('bfm_product_unit_price');
-            $table->string('bfm_product_unit_quantity');
-            $table->string('bfm_product_unit_color')->nullable();
-            $table->string('bfm_product_unit_size')->nullable();
-            $table->longText('bfm_product_comment')->nullable();
+            $table->string('name');
+            $table->string('url');
+            $table->string('unit_price');
+            $table->string('unit_quantity');
+            $table->string('unit_color')->nullable();
+            $table->string('unit_size')->nullable();
+            $table->longText('comment')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->string('courier_charge')->nullable();
+            $table->foreignId('status_id')->default(1);
             $table->timestamps();
         });
     }

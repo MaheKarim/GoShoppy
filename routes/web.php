@@ -4,6 +4,7 @@
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\SiteController;
     use App\Http\Controllers\TrackController;
+    use App\Http\Controllers\User\BuyForMeController;
     use App\Http\Controllers\User\DashboardController;
     use App\Http\Controllers\Frontend\FrontendController;
     use App\Http\Controllers\User\PayNowController;
@@ -49,6 +50,9 @@ Route::group(['as'=>'user.', 'prefix'=>'user', 'middleware'=>['auth']], function
 
     // PayNow Controller
     Route::resource('/pay-now', PayNowController::class);
+
+    // Buy For Me
+    Route::resource('BuyForMe', BuyForMeController::class);
 
 });
 

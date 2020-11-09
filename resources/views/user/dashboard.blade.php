@@ -74,11 +74,11 @@
                                 <div class="no-gutters row">
                                     <div class="col-sm-6">
                                         <div class="p-1">
-                                            <button
+                                            <a href="{{ url('user/BuyForMe/create') }}"
                                                 class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-dark">
                                                 <i class="lnr-lighter text-dark opacity-0 btn-icon-wrapper mb-2"></i>
                                                 Buy For Me
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">

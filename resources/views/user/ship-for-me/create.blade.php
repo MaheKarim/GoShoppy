@@ -67,7 +67,6 @@
                  <div class="card-body">
                      <form class="contact-form" method="POST" action="{{ route('user.ShipForMe.store') }}">
                          @csrf
-
                          <div class="form-section">
                              <!-- error message -->
                              @if ($errors->any())
@@ -139,7 +138,6 @@
 
                          <div class="form-navigation">
                              <a href="{{ url('user/dashboard') }}" type="button" class="previous btn btn-danger float-left">Cancel</a>
-{{--                             <button type="button" class="next btn btn-info float-right">Next</button>--}}
                              <button type="submit" class="next btn btn-success float-right">Submit</button>
                          </div>
                      </form>
@@ -148,42 +146,5 @@
             </div>
         </div>
     </div>
-
 @endsection
 
-{{--@push('wizard_js')--}}
-{{--    <script>--}}
-{{--        $(function(){--}}
-{{--           var $sections = $('form-section');--}}
-
-{{--           function navigateTo(index) {--}}
-{{--               $sections.removeClass('current').eq(index).addClass('current');--}}
-{{--               $('.form-navigation .previous').toggle(index>0);--}}
-{{--               var atTheEnd = index >= $sections.length - 1;--}}
-{{--               $('.form-navigation .next').toggle(!atTheEnd);--}}
-{{--               $('.form-navigation [type=submit]').toggle(atTheEnd);--}}
-{{--           }--}}
-
-{{--           function curIndex() {--}}
-{{--               return $sections.index($sections.filter('.current'));--}}
-{{--           }--}}
-
-{{--           $('.form-navigation .previous').click(function () {--}}
-{{--               navigateTo(curIndex()-1);--}}
-{{--           });--}}
-
-{{--           $('.form-navigation .next').click(function () {--}}
-{{--               $('.contact-form').parsley.whenValidate({--}}
-{{--                   group: 'block-' + curIndex()--}}
-{{--               }).done(function () {--}}
-{{--                    navigateTo(curIndex()+1);--}}
-{{--               })--}}
-{{--            });--}}
-
-{{--            $sections.each(function (index, section) {--}}
-{{--                $(section).find(':input').attr('data-parsley-group', 'block'+index);--}}
-{{--            });--}}
-{{--            navigateTo(0);--}}
-{{--        });--}}
-{{--   </script>--}}
-{{--@endpush--}}

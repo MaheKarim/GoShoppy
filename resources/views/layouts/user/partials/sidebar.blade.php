@@ -82,9 +82,24 @@
                 </li>
                 <!-- Courier Widget End -->
                 <li>
-                    <a href="widgets-profile-boxes.html">
-                        <i class="metismenu-icon pe-7s-id"></i>Buy For Me
+                    <a href="#" class="{{ Request::is('user/BuyForMe*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-id"> </i>Buy For Me
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('user.BuyForMe.index') }}" class="{{ Request::is('user/BuyForMe') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Check Buy Order Status
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('user.BuyForMe.create') }}" class="{{ Request::is('user/BuyForMe/create') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Create Buy-For-Me Request
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
                 <li class="app-sidebar__heading">Settings Panel</li>
                 <li>
