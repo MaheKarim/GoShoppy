@@ -57,7 +57,7 @@
                 <li>
                     <a href="{{ url('app/payment-receive') }}" class="{{ Request::is('app/payment-receive*') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-diamond"></i>
-                        Payment Receive
+                        Payment Receive Status
                     </a>
                 </li>
                 <li>

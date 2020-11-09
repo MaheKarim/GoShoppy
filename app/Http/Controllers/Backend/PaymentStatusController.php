@@ -72,9 +72,16 @@ class PaymentStatusController extends Controller
      * @param  \App\Models\PayNow  $payNow
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PayNow $payNow)
+    public function update(Request $request)
     {
-        //
+//        $this->validate($request, [
+//            'status_id' => 'required'
+//        ]);
+        PayNow::findOrFail($request->id)->update([
+            'status_id' => $request->status_id,
+        ]);
+        notify()->success("Payment Status Updated","Success");
+        return redirect()->route('app.payment-receive.index');
     }
 
     /**

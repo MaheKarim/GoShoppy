@@ -46,7 +46,7 @@ class PayNowController extends Controller
         $payments->payment_sender_traxid = $request->payment_sender_traxid;
         $payments->payment_sender_money = $request->payment_sender_money;
         $payments->user_id = Auth::id();
-        $payments->payment_status = 1;
+        $payments->status_id = 1;
         $payments->save();
 
         notify()->success('Payment Option Sent. Check Status After Few Minutes','Successfully');

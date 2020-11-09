@@ -35,6 +35,7 @@
                                 <th class="text-center">Product TrackID</th>
                                 <th class="text-center">Sender Account NO</th>
                                 <th class="text-center">Payment Service Type</th>
+                                <th class="text-center">Sent Money</th>
                                 <th class="text-center">Sender TraXID</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Actions</th>
@@ -46,11 +47,11 @@
                                     <td class="text-center text-muted">{{ $key+1 }}</td>
                                     <td class="text-center">{{ $payment->User->name }} </td>
                                     <td class="text-center">{{ $payment->payment_trackID }} </td>
-                                    <td class="text-center">{{ $payment->payment_sender_acc }}
-                                    </td>
+                                    <td class="text-center">{{ $payment->payment_sender_acc }}</td>
                                     <td class="text-center">{{ $payment->service->pay_service_name }}</td>
+                                    <td class="text-center">{{ $payment->payment_sender_money }}</td>
                                     <td class="text-center">{{ $payment->payment_sender_traxid }}</td>
-                                    <td class="text-center">{{ $payment->payment_status }}</td>
+                                    <td class="text-center">{{ $payment->status->status }}</td>
 
                                     <td class="text-center">
                                         <a href="{{ route('app.payment-receive.edit', $payment->id) }}"

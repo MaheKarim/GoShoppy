@@ -30,7 +30,7 @@
                             <th class="text-center">Products TrackID</th>
                             <th class="text-center">Payment Service</th>
                             <th class="text-center">From</th>
-                            <th class="text-center">Trax ID</th>
+                            <th class="text-center">TraX ID</th>
                             <th class="text-center">Paid</th>
                             <th class="text-center">Order Status</th>
                             <th class="text-center">Order Created At</th>
@@ -42,11 +42,11 @@
                             <tr>
                                 <td class="text-center text-muted">#{{ $key + 1 }}</td>
                                 <td class="text-center">{{ $payment->payment_trackID }}</td>
-                                <td class="text-center">{{ $payment->payment_name_id}}</td>
+                                <td class="text-center">{{ $payment->service->pay_service_name}}</td>
                                 <td class="text-center">{{ $payment->payment_sender_acc }}</td>
                                 <td class="text-center">{{ $payment->payment_sender_traxid }}</td>
                                 <td class="text-center">{{ $payment->payment_sender_money }}</td>
-                                <td class="text-center">{{ $payment->payment_status }}</td>
+                                <td class="text-center">{{ $payment->status->status }}</td>
                                 <td class="text-center">{{ $payment->created_at->diffForHumans() }}</td>
                             </tr>
                         @endforeach

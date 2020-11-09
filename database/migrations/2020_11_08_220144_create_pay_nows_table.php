@@ -20,7 +20,7 @@ class CreatePayNowsTable extends Migration
             $table->string('payment_sender_acc');
             $table->string('payment_sender_money');
             $table->string('payment_sender_traxid')->nullable();
-            $table->foreignId('payment_status');
+            $table->foreignId('status_id');
             $table->integer('user_id');
             $table->timestamps();
         });
