@@ -55,6 +55,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ url('app/payment-receive') }}" class="{{ Request::is('app/payment-receive*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        Payment Receive
+                    </a>
+                </li>
+                <li>
                     <a href="{{ url('app/client-quote') }}" class="{{ Request::is('app/client-quote*') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-right-arrow"></i>
                         Client Quote

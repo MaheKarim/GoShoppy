@@ -4,6 +4,7 @@
     use App\Http\Controllers\Backend\DashboardController;
     use App\Http\Controllers\Backend\FAQController;
     use App\Http\Controllers\Backend\GetQuoteFormController;
+    use App\Http\Controllers\Backend\PaymentStatusController;
     use App\Http\Controllers\Backend\ProfileController;
     use App\Http\Controllers\Backend\RoleController;
     use App\Http\Controllers\Backend\ShipOrderProcessController;
@@ -45,3 +46,5 @@
     Route::resource('client-quote', GetQuoteFormController::class);
     // Payment Service Controller
     Route::resource('payment-service', PaymentServiceController::class);
+    // Payment Receive
+    Route::resource('payment-receive', PaymentStatusController::class);

@@ -10,4 +10,8 @@ class PaymentService extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function payment(){
+        return $this->belongsTo(PayNow::class);
+    }
 }

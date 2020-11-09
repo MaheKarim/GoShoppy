@@ -6,6 +6,7 @@
     use App\Http\Controllers\TrackController;
     use App\Http\Controllers\User\DashboardController;
     use App\Http\Controllers\Frontend\FrontendController;
+    use App\Http\Controllers\User\PayNowController;
     use App\Http\Controllers\User\ProfileController;
     use App\Http\Controllers\User\ShipForMeController;
     use Illuminate\Support\Facades\Route;
@@ -43,12 +44,16 @@ Route::group(['as'=>'user.', 'prefix'=>'user', 'middleware'=>['auth']], function
     Route::get('profile/security', [ProfileController::class,'changePassword'])->name('profile.password.change');
     Route::put('profile/security', [ProfileController::class,'updatePassword'])->name('profile.password.update');
 
-
     // Ship For Me
     Route::resource('ShipForMe', ShipForMeController::class);
+
+    // PayNow Controller
+    Route::resource('/pay-now', PayNowController::class);
+
 });
 
    // Track Your Order
 
   Route::get('/order-tracking', [TrackController::class, 'index'])->name('order.track');
   Route::get('/order-tracking/result', [TrackController::class, 'search'])->name('order.search');
+

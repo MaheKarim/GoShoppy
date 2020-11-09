@@ -40,6 +40,26 @@
                         <i class="metismenu-icon pe-7s-home"></i>Dashboards
                     </a>
                 </li>
+                <li class="app-sidebar__heading">Payments Option</li>
+                <li>
+                    <a href="#" class="{{ Request::is('user/pay-now*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-like2"></i> Payments Send / Check
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('user.pay-now.index') }}" class="{{ Request::is('user/pay-now') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Check Payment Status
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('user.pay-now.create') }}" class="{{ Request::is('user/pay-now/create') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Send Payment Request
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="app-sidebar__heading">Courier Widgets</li>
                 <!-- Courier Widget -->
                 <li>

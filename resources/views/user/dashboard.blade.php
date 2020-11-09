@@ -92,9 +92,9 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="p-1">
-                                            <a
+                                            <a href="{{ route('user.pay-now.create') }}" target="_blank"
                                                 class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-success">
-                                                <i class="lnr-bus text-success opacity-7 btn-icon-wrapper mb-2"></i>
+                                                <i class="lnr-thumbs-up text-success opacity-7 btn-icon-wrapper mb-2"></i>
                                                 Pay Now
                                             </a>
                                         </div>
