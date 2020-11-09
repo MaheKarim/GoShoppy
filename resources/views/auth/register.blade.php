@@ -25,8 +25,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcroumb-title text-center">
-                    <h1>Login</h1>
-                    <h6><a href="{{ url('/') }}">Home</a> / Login</h6>
+                    <h1>Register</h1>
+                    <h6><a href="{{ url('/') }}">Home</a> / Register</h6>
                 </div>
             </div>
         </div>
