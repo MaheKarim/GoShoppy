@@ -30,11 +30,21 @@
                         <div class="card-body">
                             <h5 class="card-title">Admin Order Update</h5>
                             <div class="form-group">
-                                <label for="comment">Comment</label>
+                                <label for="comment">Update Payment Status</label>
                                 <input id="comment" type="text" class="form-control @error('comment') is-invalid @enderror"
-                                       name="comment" value="{{ $orders->comment ??  old('comment') }}" required autofocus>
+                                       name="comment" value="{{ $orders->comment ??  old('comment') }}" required placeholder="Ex: Incomplete" autofocus>
                                 <input type="hidden" name="comment_id"  value="{{ $orders->id }}">
                                 @error('comment')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="payble_money">Payable Money</label>
+                                <input id="payble_money" type="text" class="form-control @error('payble_money') is-invalid @enderror"
+                                       name="payble_money" value="{{ $orders->payble_money ??  old('payble_money') }}" placeholder="EX: 120 BDT or $2 USD" required autofocus>
+                                @error('payble_money')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -52,7 +62,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Update Status</label>
+                                <label>Update Order Status</label>
                                 <select name="status_id" class="form-control select">
                                     @php($statuss= \App\Models\Status::all())
                                     @foreach ($statuss as $status)

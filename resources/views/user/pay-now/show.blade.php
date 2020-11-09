@@ -29,11 +29,12 @@
                             <th class="text-center">#</th>
                             <th class="text-center">Products TrackID</th>
                             <th class="text-center">Payment Service</th>
-                            <th class="text-center">Receiver PHN</th>
-                            <th class="text-center">Tracking ID</th>
+                            <th class="text-center">From</th>
+                            <th class="text-center">Trax ID</th>
+                            <th class="text-center">Paid</th>
                             <th class="text-center">Order Status</th>
                             <th class="text-center">Order Created At</th>
-                            
+
                         </tr>
                         </thead>
                         <tbody>
@@ -44,10 +45,9 @@
                                 <td class="text-center">{{ $payment->payment_name_id}}</td>
                                 <td class="text-center">{{ $payment->payment_sender_acc }}</td>
                                 <td class="text-center">{{ $payment->payment_sender_traxid }}</td>
+                                <td class="text-center">{{ $payment->payment_sender_money }}</td>
                                 <td class="text-center">{{ $payment->payment_status }}</td>
-
                                 <td class="text-center">{{ $payment->created_at->diffForHumans() }}</td>
-
                             </tr>
                         @endforeach
                         </tbody>

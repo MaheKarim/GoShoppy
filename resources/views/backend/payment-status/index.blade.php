@@ -53,7 +53,7 @@
                                     <td class="text-center">{{ $payment->payment_status }}</td>
 
                                     <td class="text-center">
-                                        <a href="{{ route('app.payment-service.edit', $payment->id) }}"
+                                        <a href="{{ route('app.payment-receive.edit', $payment->id) }}"
                                            class="btn btn-info btn-sm">
                                             <i class="fas fa-edit"></i>
                                             <span>Edit</span>
@@ -64,7 +64,7 @@
                                             <span>Delete</span>
                                         </button>
                                         <form id="delete-form-{{ $payment->id }}"
-                                              action="{{ route('app.payment-service.destroy', $payment->id) }}" method="POST"
+                                              action="{{ route('app.payment-receive.destroy', $payment->id) }}" method="POST"
                                               style="display: none;">
                                             @csrf
                                             @method('DELETE ')

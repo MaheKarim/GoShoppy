@@ -44,7 +44,8 @@
                         <thead>
                         <tr>
                             <th class="text-center">TrackID</th>
-                            <th class="text-center">Comment</th>
+                            <th class="text-center">Payment Status</th>
+                            <th class="text-center">Payable Money</th>
                             <th class="text-center">Delivery Date</th>
                             <th class="text-center">Order Status</th>
                             <th class="text-center">Order Last Updated</th>
@@ -66,6 +67,7 @@
                                     </div>
                                 </div>
                             </td>
+                            <td class="text-center">{{ $order->payble_money }}</td>
                             <td class="text-center">{{ $order->delivery_time }}</td>
 
 

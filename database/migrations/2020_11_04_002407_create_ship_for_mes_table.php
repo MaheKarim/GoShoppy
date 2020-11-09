@@ -31,6 +31,8 @@ class CreateShipForMesTable extends Migration
             $table->longText('comment')->nullable();
             $table->string('delivery_time')->nullable();
             $table->string('user_id');
+            $table->foreignId('payment_status')->default(1);
+            $table->string('payble_money')->nullable();
             $table->timestamps();
         });
     }

@@ -79,6 +79,7 @@ class ShipOrderProcessController extends Controller
             'comment' => $request->comment,
             'delivery_time' => $request->delivery_time,
             'status_id' => $request->status_id,
+            'payble_money' => $request->payble_money,
         ]);
         notify()->success("Order Status Updated Successfully","Success");
         return redirect()->route('app.shipforme-orders.index');

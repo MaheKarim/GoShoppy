@@ -58,9 +58,11 @@ class PaymentStatusController extends Controller
      * @param  \App\Models\PayNow  $payNow
      * @return \Illuminate\Http\Response
      */
-    public function edit(PayNow $payNow)
+    public function edit($id)
     {
-        //
+        $payments = PayNow::findOrFail($id);
+
+        return view('backend.payment-status.edit-pay-status', compact('payments'));
     }
 
     /**

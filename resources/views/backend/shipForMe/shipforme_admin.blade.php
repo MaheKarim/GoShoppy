@@ -29,8 +29,9 @@
                             <th class="text-center">Track ID</th>
                             <th class="text-center">Product Name</th>
                             <th class="text-center">Order Status</th>
-                            <th class="text-center">Comment</th>
                             <th class="text-center">Delivery Time</th>
+                            <th class="text-center">Payable Money</th>
+                            <th class="text-center">Payment Status</th>
                             <th class="text-center">Ordered At</th>
                             <th class="text-center">Actions</th>
                         </tr>
@@ -61,8 +62,10 @@
                                         @endif
                                     </div>
                                 </td>
-                                <td class="text-center">{{ $order->comment }}</td>
+
                                 <td class="text-center">{{ $order->delivery_time }}</td>
+                                <td class="text-center">{{ $order->payble_money }}</td>
+                                <td class="text-center">{{ $order->comment }}</td>
                                 <td class="text-center">{{ $order->created_at->diffForHumans() }}</td>
                                 <td class="text-center">
                                     <a class="btn btn-secondary btn-sm" href="{{ route('app.shipforme-orders.show', $order->id) }}"><i

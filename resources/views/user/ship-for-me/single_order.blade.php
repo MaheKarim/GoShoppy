@@ -90,7 +90,11 @@
                             <td>{{ $shipForMe->recvr_zila }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Order Comment</th>
+                            <th scope="row">Payable Money</th>
+                            <td>{{ $shipForMe->payble_money }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Payment Status</th>
                             @if($shipForMe->comment == NULL)
                             <td> - - - -  </td>
                             @else

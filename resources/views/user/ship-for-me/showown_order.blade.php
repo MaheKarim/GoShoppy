@@ -32,7 +32,9 @@
                             <th class="text-center">Receiver PHN</th>
                             <th class="text-center">Tracking ID</th>
                             <th class="text-center">Order Status</th>
-                            <th class="text-center">Order Created At</th>
+                            <th class="text-center">Payable Money</th>
+                            <th class="text-center">Payable Status</th>
+                            <th class="text-center">Order Created</th>
                             <th class="text-center">Actions</th>
                         </tr>
                         </thead>
@@ -45,7 +47,8 @@
                                 <td class="text-center">{{ $shipforme->	recvr_phn_number1 }}</td>
                                 <td class="text-center">{{ $shipforme->	track_id }}</td>
                                 <td class="text-center">{{ $shipforme->status->status }}</td>
-
+                                <td class="text-center">{{ $shipforme->payble_money }}</td>
+                                <td class="text-center">{{ $shipforme->comment }}</td>
                                 <td class="text-center">{{ $shipforme->created_at->diffForHumans() }}</td>
                                 <td class="text-center">
                                     <a class="btn btn-secondary btn-sm" href="{{ route('user.ShipForMe.show',$shipforme->id) }}"><i
