@@ -1,11 +1,46 @@
-@extends('layouts.frontend.app')
+<!DOCTYPE html>
 
-@section('content')
+<html lang="en">
+<!-- head -->
+
+@include('frontend.partials.header')
+<!-- end head -->
+<!-- body start-->
+
+<body>
+<!-- preloader -->
+<div class="preloader">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+<!-- end preloader -->
+
+<!-- top-nav bar start-->
+@include('frontend.partials.navbar')
+<!-- top-nav bar end-->
+<div class="breadcroumb-area bread-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcroumb-title text-center">
+                    <h1>Login</h1>
+                    <h6><a href="{{ url('/') }}">Home</a> / Login</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- top-nav bar end-->
+<br>
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header text-white bg-info mb-3">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -107,7 +142,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-info">
                                     {{ __('Register') }}
                                 </button>
                             </div>
@@ -118,4 +153,15 @@
         </div>
     </div>
 </div>
-@endsection
+
+
+<br> <hr>
+
+<!-- footer end-->
+@include('frontend.partials.footer')
+<!-- Scroll Top Area -->
+@include('frontend.partials.frontendJS')
+
+</body>
+</html>
+
