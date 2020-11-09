@@ -17,7 +17,7 @@ class PayNow extends Model
     public function User(){
         return $this->belongsTo(User::class);
     }
-    public function pay(){
-        return $this->belongsToMany(PaymentService::class);
+    public function service(){
+        return $this->belongsTo(PaymentService::class, 'payment_name_id');
     }
 }

@@ -45,14 +45,14 @@
                     <h6>Write Your TRACK ID</h6>
                     <form action="{{ route('order.search') }}" method="get">
                         <input type="text" name="track_id" id="track_id" required placeholder="Tracking ID">
-                        <button class="btn btn-primary" type="submit" name="submit">Track Your Product</button>
+                        <button class="btn btn-primary" type="submit">Track Your Product</button>
                     </form>
                 </div>
             </div>
             <div class="col-lg-8">
+                @if($order != NULL)
                 <div class="main-card mb-3 card">
                     <div class="card-body p-0">
-                        @foreach($trackingid as $order)
                         <table class="table table-hover mb-0">
                             <tbody>
                             <tr>
@@ -77,7 +77,7 @@
                             </tr>
 
                             <tr>
-                                <th>Comment About Delivery</th>
+                                <th>Payment Status</th>
                                 <td>{{ $order->comment }}</td>
                             </tr>
                             <tr>
@@ -86,10 +86,18 @@
                             </tr>
                             </tbody>
                         </table>
-                        @endforeach
                     </div>
                     <!-- /.card-body -->
                 </div>
+                @else
+                    <div class="card text-white bg-danger mb-2" style="max-width: 25rem;">
+                        <div class="card-header">Order ID</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-white">NO Track ID Found</h5><br> <br> <br>
+                            <p class="card-text">Please Search Again with Valid TrackID</p>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

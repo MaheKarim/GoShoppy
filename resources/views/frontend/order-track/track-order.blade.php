@@ -44,6 +44,7 @@
                 <div class="question-section">
                     <h6>Write Your TRACK ID</h6>
                     <form action="{{ route('order.search') }}" method="get">
+
                         <input type="text" name="track_id" id="track_id" required placeholder="Tracking ID">
                         <button class="btn btn-primary" type="submit" name="submit">Track Your Product</button>
                     </form>

@@ -48,7 +48,7 @@
                                     <td class="text-center">{{ $payment->payment_trackID }} </td>
                                     <td class="text-center">{{ $payment->payment_sender_acc }}
                                     </td>
-                                    <td class="text-center">{{ $payment->payment_name_id }}</td>
+                                    <td class="text-center">{{ $payment->service->pay_service_name }}</td>
                                     <td class="text-center">{{ $payment->payment_sender_traxid }}</td>
                                     <td class="text-center">{{ $payment->payment_status }}</td>
 

@@ -35,9 +35,9 @@ class TrackController extends Controller
      */
     public function search(Request $request)
     {
-         $trackingid = ShipForMe::where('track_id', 'like', "%" . $request->track_id . "%")->get();
+         $order = ShipForMe::where('track_id', $request->track_id)->first();
 
-         return view('frontend.order-track.track-order-result', compact('trackingid'));
+         return view('frontend.order-track.track-order-result', compact('order'));
     }
 
     /**
