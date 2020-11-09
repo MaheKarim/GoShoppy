@@ -1,16 +1,49 @@
-@extends('layouts.frontend.app')
+<!DOCTYPE html>
 
-@section('content')
+<html lang="en">
+<!-- head -->
+
+@include('frontend.partials.header')
+<!-- end head -->
+<!-- body start-->
+
+<body>
+<!-- preloader -->
+<div class="preloader">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+<!-- end preloader -->
+
+<!-- top-nav bar start-->
+@include('frontend.partials.navbar')
+<!-- top-nav bar end-->
+<div class="breadcroumb-area bread-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcroumb-title text-center">
+                    <h1>Login</h1>
+                    <h6><a href="{{ url('/') }}">Home</a> / Login</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- top-nav bar end-->
+<br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header text-white bg-info mb-3">{{ __('Login To Your Account') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -53,7 +86,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-info">
                                     {{ __('Login') }}
                                 </button>
 
@@ -70,4 +103,13 @@
         </div>
     </div>
 </div>
-@endsection
+
+<br> <hr>
+
+<!-- footer end-->
+@include('frontend.partials.footer')
+<!-- Scroll Top Area -->
+@include('frontend.partials.frontendJS')
+
+</body>
+</html>
