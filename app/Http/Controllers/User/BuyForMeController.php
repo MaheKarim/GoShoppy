@@ -36,7 +36,7 @@ class BuyForMeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
@@ -47,7 +47,7 @@ class BuyForMeController extends Controller
      */
     public function show(BuyForMe $buyForMe)
     {
-        //
+
     }
 
     /**
@@ -82,5 +82,10 @@ class BuyForMeController extends Controller
     public function destroy(BuyForMe $buyForMe)
     {
         //
+    }
+
+    public function test(Request $request)
+    {
+        return view('user.buy-for-me.show', compact('request'));
     }
 }
