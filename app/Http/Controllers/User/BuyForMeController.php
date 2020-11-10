@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\BuyForMe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BuyForMeController extends Controller
 {
@@ -15,7 +16,9 @@ class BuyForMeController extends Controller
      */
     public function index()
     {
-        //
+        $buyorders = BuyForMe::where('user_id', Auth::id())->get();
+
+        return view('user.buy-for-me.index', compact('buyorders'));
     }
 
     /**

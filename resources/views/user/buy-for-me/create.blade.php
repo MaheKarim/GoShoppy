@@ -8,7 +8,7 @@
                     <i class="pe-7s-id icon-gradient bg-mean-fruit">
                     </i>
                 </div>
-                <div>{{ __('Ship Details') }}</div>
+                <div>{{ __('Buy For Me') }}</div>
             </div>
             <div class="page-title-actions">
                 <div class="d-inline-block dropdown">
