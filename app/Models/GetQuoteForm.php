@@ -13,6 +13,6 @@ class GetQuoteForm extends Model
 
     public function courier()
     {
-        return $this->hasMany(CourierType::class);
+        return $this->belongsTo(CourierType::class, 'couriertype_id');
     }
 }

@@ -43,7 +43,7 @@
                                     <td class="text-center text-muted">{{ $key+1 }}</td>
                                     <td class="text-center">{{ $getquote->client_name }}</td>
                                     <td class="text-center">{{ $getquote->client_contact }}</td>
-                                    <td class="text-center">{{ $getquote->couriertype_id }}</td>
+                                    <td class="text-center">{{ $getquote->courier->courier_type_name }}</td>
                                     <td class="text-center">{{ $getquote->created_at->diffForHumans() }}</td>
 
                                     <td class="text-center">

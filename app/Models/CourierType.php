@@ -10,8 +10,5 @@ class CourierType extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function getquotes()
-    {
-        return $this->belongsTo(GetQuoteForm::class);
-    }
+
 }
