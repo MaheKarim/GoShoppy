@@ -39,7 +39,19 @@ class BuyForMeController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $buyorders = new BuyForMe();
+        $buyorders->name = $request->name;
+        $buyorders->url = $request->url;
+        $buyorders->unit_price = $request->unit_price;
+        $buyorders->unit_quantity = $request->unit_quantity;
+        $buyorders->unit_color = $request->unit_color;
+        $buyorders->unit_size = $request->unit_size;
+        $buyorders->comment = $request->comment;
+        $buyorders->user_id = Auth::id();
+        $buyorders->status_id = 1;
+        $buyorders->save();
+
+        return redirect()->route('user.test')->with('request', $buyorders);
     }
 
     /**
@@ -89,6 +101,7 @@ class BuyForMeController extends Controller
 
     public function test(Request $request)
     {
+
         return view('user.buy-for-me.show', compact('request'));
     }
 }

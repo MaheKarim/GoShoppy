@@ -27,8 +27,9 @@
         <div class="col-md-12">
             <div class="main-card mb-3 card">
                 <div class="card-body">
-                    <h5 class="card-title">Product Information</h5>
-                    <form method="get" action="{{ route('user.test') }}">
+                    <h5 class="card-title">Product Information kkk</h5>
+                    <form method="post" action="{{ route('user.BuyForMe.store') }}">
+                        @csrf
                         <div class="position-relative form-group">
                             <label for="name"class="">Product Name  <span style="color: red">*</span></label>
                             <input name="name" id="name" placeholder="T-Shirt or Xiaomi Note 9 Pro Max Phone" type="text" class="form-control">

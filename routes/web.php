@@ -53,7 +53,7 @@ Route::group(['as'=>'user.', 'prefix'=>'user', 'middleware'=>['auth']], function
 
     // Buy For Me
     Route::resource('BuyForMe', BuyForMeController::class);
-    Route::get('test/check', [BuyForMeController::class, 'test'])->name('test');
+    Route::get('/test/check', [BuyForMeController::class, 'test'])->name('test');
 
 });
 
