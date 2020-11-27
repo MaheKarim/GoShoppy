@@ -46,5 +46,6 @@
 @stack('wizard_js')
 @stack('js_user')
 
+@stack('paypal')
 </body>
 </html>

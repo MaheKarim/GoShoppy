@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\Backend\BuyOrderProcessController;
     use App\Http\Controllers\Backend\CourierTypeController;
     use App\Http\Controllers\Backend\DashboardController;
     use App\Http\Controllers\Backend\FAQController;
@@ -33,6 +34,7 @@
 
     // Ship For Me Admin Access
     Route::resource('shipforme-orders', ShipOrderProcessController::class);
+    Route::resource('buyforme-orders', BuyOrderProcessController::class);
 
     // Profile Controller
     Route::get('profile', [ProfileController::class,'index'])->name('profile.index');

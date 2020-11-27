@@ -55,6 +55,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ url('app/buyforme-orders') }}" class="{{ Request::is('app/buyforme-orders*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-plane"></i>
+                        BuyForMe - Orders
+                    </a>
+                </li>
+                <li>
                     <a href="{{ url('app/payment-receive') }}" class="{{ Request::is('app/payment-receive*') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-diamond"></i>
                         Payment Receive Status

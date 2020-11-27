@@ -53,8 +53,8 @@
 
 @endsection
 
-@push('js_user')
-    <script src="https://www.paypal.com/sdk/js?client-id=Ae0oJXnamAkdwLQGw3K9GSMS6M-XwW30PHf713IHX9AabCT9DTC79uxlnXCEw-n98TUpDgPW0MLsjut_&currency=USD"></script>
+@push('paypal')
+    <script src="https://www.paypal.com/sdk/js?client-id=AeAGO9hsLu67mLnLzWCJPdcFod1l1aMHJtLT3I4VgOavdkdJ88P5fWibZIoPf1-81Kh-Fo5bsNZcqVxa_&currency=USD"></script>
     <script>
         // Render the PayPal button into #paypal-button-container
         paypal.Buttons({
@@ -65,7 +65,7 @@
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: '{{ $request->unit_price + 20}}'
+                            value: '{{ session('request.unit_price') * session('request.unit_quantity') + 20 }}'
                         }
                     }]
                 });

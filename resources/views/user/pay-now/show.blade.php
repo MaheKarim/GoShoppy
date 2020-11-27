@@ -1,6 +1,6 @@
 @extends('layouts.user.app')
 
-@section('title','ShipForMe Order')
+@section('title','Manual Payments Sheet')
 
 @push('css_new')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
@@ -14,7 +14,7 @@
                     <i class="fas fa-ship icon-gradient bg-mean-fruit">
                     </i>
                 </div>
-                <div>{{ __('All Orders') }}</div>
+                <div>{{ __('Manual Payments Sheet') }}</div>
             </div>
 
         </div>

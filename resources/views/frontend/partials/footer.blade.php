@@ -1,7 +1,7 @@
 <footer id="footer" class="footer-main-block">
     <div class="container">
         <div class="row text-white">
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-5 col-sm-4">
                 <div class="about-widget footer-widget">
                     <div class="logo-footer">
                         <a href="index.html" title="logo"><img src="{{ asset('/') }}frontend/images/logo-white.png" alt="logo"></a>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-3 col-sm-4">
                 <div class="courier-type-widget footer-widget mrg-btm-30">
                     <h6 class="footer text-white">Our Services</h6>
                     <div class="footer-list">
@@ -51,49 +51,11 @@
                             <li><a href="{{ url('/register') }}" title="link"><i class="las la-arrow-circle-right"></i> Register</a></li>
                             <li><a href="{{ url('/order-tracking') }}" title="link"><i class="las la-arrow-circle-right"></i>Order Tracking</a></li>
                             <li><a href="{{ url('/faq') }}" title="link"><i class="las la-arrow-circle-right"></i>FAQ</a></li>
-                            <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i>Overnight</a></li>
-                            <li><a href="services-details.html" title="link"><i class="las la-arrow-circle-right"></i>Pallet</a></li>
-                        </ul>
+                            </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="recent-news-widget footer-widget mrg-btm-30">
-                    <h6 class="footer text-white">Recent News</h6>
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-3">
-                            <div class="footer-img">
-                                <a href="blog-detail.html" title="blog"><img src="{{ asset('/') }}frontend/images/footer/recent-news-01.jpg" class="img-fluid" alt="blog"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-sm-9">
-                            <div class="recent-news-footer">
-                                <a href="blog-detail.html" title="link">
-                                    <p>It is a long established fat that a reader.</p>
-                                </a>
-                                <div class="date-footer"><i class="las la-calendar"></i> 2 Days ago</div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-3">
-                            <div class="footer-img">
-                                <a href="blog-detail.html" title="link"><img src="{{ asset('/') }}frontend/images/footer/recent-news-02.jpg" class="img-fluid" alt="blog"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-sm-9">
-                            <div class="recent-news-footer">
-                                <a href="blog-detail.html" title="link">
-                                    <p>By injected humour or van randomised words</p>
-                                </a>
-                                <div class="date-footer"><i class="las la-calendar"></i> 2 Days ago</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-4">
                 <div class="news-widget footer-widget mrg-btm-30">
                     <h6 class="footer text-white">Newsletter</h6>
                     <p>Sign up to our courier point for surveys recent updates &amp; offers.</p>
@@ -104,14 +66,13 @@
                         <button type="submit" class="btn btn-primary" title="subscribe">Subscribe</button>
                         <label for="mc-email"></label>
                     </form>
+                    <br>
                     <div class="footer-social">
                         <ul>
                             <li>Follow Us :</li>
                             <li><a href="https://facebook.com/" target="_blank" title="facebook"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="https://twitter.com/" target="_blank" title="twitter"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="https://plus.google.com/" target="_blank" title="linked-in"><i class="lab la-linkedin-in"></i></a></li>
                             <li><a href="https://youtube.com/" target="_blank" title="youtube"><i class="lab la-youtube"></i></a></li>
-
                         </ul>
                     </div>
                 </div>
