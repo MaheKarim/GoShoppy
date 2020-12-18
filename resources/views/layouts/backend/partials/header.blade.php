@@ -80,7 +80,7 @@
                                 <div class="header-btn-lg pr-0">
                                     <div class="widget-content-right">
                                         <div class="widget-heading">{{ Auth::user()->name }}</div>
-                                        <div class="widget-subheading opacity-8">Personal Balance: <b> {{ Auth::user()->deposit_balance }} </b> BDT</div>
+                                        {{--  <div class="widget-subheading opacity-8">Personal Balance: <b> {{ Auth::user()->deposit_balance }} </b> BDT</div>  --}}
                                     </div>
                                 </div>
                             </div>
