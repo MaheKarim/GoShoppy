@@ -60,7 +60,7 @@
                     <div class="widget-content-wrapper text-white">
                         <div class="widget-content-left">
                             <div class="widget-heading">Total Users</div>
-                            <div class="widget-subheading">People Interested</div>
+                            <div class="widget-subheading">Only Role Based </div>
                         </div>
                         <div class="widget-content-right">
                             <div class="widget-numbers text-white">
@@ -131,7 +131,7 @@
                         </div>
                         <div class="widget-chart-content">
                             <div class="widget-subheading">Accepted Order</div>
-                            <div class="widget-numbers text-success"><span>{{ \App\Models\ShipForMe::where('status_id', '=', '3')->count() }} Order</span></div>
+                            <div class="widget-numbers"><span>{{ \App\Models\ShipForMe::where('status_id', '=', '3')->count() }} Order</span></div>
 
                         </div>
                     </div>
@@ -164,7 +164,7 @@
                         </div>
                         <div class="widget-chart-content">
                             <div class="widget-subheading"> Pending Orders</div>
-                            <div class="widget-numbers">{{ \App\Models\BuyForMe::where('status_id','=','1')->count() }} Order</div>
+                            <div class="widget-numbers text-warning">{{ \App\Models\BuyForMe::where('status_id','=','1')->count() }} Order</div>
 
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                         </div>
                         <div class="widget-chart-content">
                             <div class="widget-subheading">Rejected Order</div>
-                            <div class="widget-numbers"><span>{{ \App\Models\BuyForMe::where('status_id', '=', '2')->count() }} Order</span></div>
+                            <div class="widget-numbers text-danger"><span>{{ \App\Models\BuyForMe::where('status_id', '=', '2')->count() }} Order</span></div>
 
                         </div>
                     </div>
