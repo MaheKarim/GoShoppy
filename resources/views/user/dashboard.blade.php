@@ -137,7 +137,7 @@
                             @foreach($payments as $payment)
                             <div class="col-md-3">
                                 <div class="dropdown-menu-header">
-                                   @if($payment->id == 1 ) {
+                                   @if($payment->id == 1 )
                                     <div class="dropdown-menu-header-inner bg-primary">
                                         <div class="menu-header-image" style="background-image: url('/assets/images/dropdown-header/abstract1.jpg');">
                                         </div>
@@ -146,7 +146,7 @@
                                             <h6 class="menu-header-subtitle">Pay Your Bill To Our {{ $payment->pay_service_name }} Service</h6>
                                         </div>
                                     </div>
-                                    } @elseif ($payment->id == 2) {
+                                    @elseif ($payment->id == 2)
                                     <div class="dropdown-menu-header-inner bg-danger">
                                         <div class="menu-header-image opacity-2" style="background-image: url('/assets/images/dropdown-header/abstract2.jpg');"></div>
                                         <div class="menu-header-content">
@@ -154,7 +154,7 @@
                                             <h6 class="menu-header-subtitle">Pay Your Bill To Our {{ $payment->pay_service_name }} Service</h6>
                                         </div>
                                     </div>
-                                    } @elseif ($payment->id == 3){
+                                    @elseif ($payment->id == 3)
                                     <div class="dropdown-menu-header-inner bg-success">
                                         <div class="menu-header-image opacity-1" style="background-image: url('/assets/images/dropdown-header/abstract3.jpg');"></div>
                                         <div class="menu-header-content">
@@ -162,7 +162,7 @@
                                             <h6 class="menu-header-subtitle">Pay Your Bill To Our {{ $payment->pay_service_name }} Service</h6>
                                         </div>
                                     </div>
-                                    } @elseif ($payment->id == 4) {
+                                     @elseif ($payment->id == 4)
                                     <div class="dropdown-menu-header-inner bg-dark">
                                         <div class="menu-header-image opacity-1" style="background-image: url('/assets/images/dropdown-header/abstract3.jpg');"></div>
                                         <div class="menu-header-content">
@@ -170,7 +170,7 @@
                                             <h6 class="menu-header-subtitle">Pay Your Bill To Our {{ $payment->pay_service_name }} Service</h6>
                                         </div>
                                     </div>
-                                    }
+
                                     @endif
                                 </div>
                                 <ul class="nav flex-column">

@@ -71,7 +71,71 @@
         </div>
     </div>
 </div>
-
+<!-- services start -->
+<div id="services" class="services-main-block-2" style="background-image: url('images/bg/best-bg.jpg')">
+    <div class="container">
+        <div class="section text-center">
+            <h1 class="section-heading">Our Services</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="single-service-item">
+                    <div class="download-icon">
+                        <img src="{{ asset('/') }}frontend/images/icons/service-1.png" class="img-fluid" alt="about-img">
+                    </div>
+                    <h4>Ship For Me</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="single-service-item">
+                    <div class="download-icon">
+                        <img src="{{ asset('/') }}frontend/images/icons/service-2.png" class="img-fluid" alt="about-img">
+                    </div>
+                    <h4>Packaging Goods</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="single-service-item">
+                    <div class="download-icon">
+                        <img src="{{ asset('/') }}frontend/images/icons/service-3.png" class="img-fluid" alt="about-img">
+                    </div>
+                    <h4>Buy For Me</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="single-service-item">
+                    <div class="download-icon">
+                        <img src="{{ asset('/') }}frontend/images/icons/service-4.png" class="img-fluid" alt="about-img">
+                    </div>
+                    <h4>eCourier System</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="single-service-item">
+                    <div class="download-icon">
+                        <img src="{{ asset('/') }}frontend/images/icons/service-5.png" class="img-fluid" alt="about-img">
+                    </div>
+                    <h4>Door Delivery</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="single-service-item">
+                    <div class="download-icon">
+                        <img src="{{ asset('/') }}frontend/images/icons/service-6.png" class="img-fluid" alt="about-img">
+                    </div>
+                    <h4>Review Us </h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- services end-->
 <!-- clients end-->
 
 <!-- footer start-->
