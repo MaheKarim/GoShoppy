@@ -21,6 +21,7 @@
     @stack('css_new')
     @stack('css_user')
     @stack('wizard')
+    @yield('paypal_script')
 </head>
 
 <body>
@@ -46,6 +47,6 @@
 @stack('wizard_js')
 @stack('js_user')
 
-@stack('paypal')
+@yield('paypal')
 </body>
 </html>
