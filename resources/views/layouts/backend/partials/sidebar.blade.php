@@ -51,13 +51,13 @@
                 <li>
                     <a href="{{ url('app/shipforme-orders') }}" class="{{ Request::is('app/shipforme-orders*') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-plugin"></i>
-                        ShipForMe - Orders
+                        ShipForMe - Import
                     </a>
                 </li>
                 <li>
                     <a href="{{ url('app/buyforme-orders') }}" class="{{ Request::is('app/buyforme-orders*') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-plane"></i>
-                        BuyForMe - Orders
+                        BuyForMe - Export
                     </a>
                 </li>
                 <li>

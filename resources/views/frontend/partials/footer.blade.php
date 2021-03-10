@@ -66,7 +66,7 @@
                         <button type="submit" class="btn btn-primary" title="subscribe">Subscribe</button>
                         <label for="mc-email"></label>
                     </form>
-                    <br>
+                    <br>    
                     <div class="footer-social">
                         <ul>
                             <li>Follow Us :</li>
@@ -94,7 +94,7 @@
                             <li><a href="#" title="Terms &amp; Conditions"> Terms &amp; Conditions </a></li>
 
                             <li >
-                                <a href="#"  title="Developer"> <i class="las la-globe"></i>   Developed by  <a href="https://mahekarim.me" target="_blank">❤️ Mahe</a></a>
+                                <a href="#"  title="Developer"> <i class="las la-globe"></i>   Developed by  <a href="https://mahekarim.me" target="_blank">❤️ Jahid</a></a>
                             </li>
                         </ul>
                     </div>
