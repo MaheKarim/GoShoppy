@@ -36,7 +36,7 @@
                         </div>
                         <div class="position-relative form-group">
                             <label for="url" class="">Product URL  <span style="color: red">*</span></label>
-                            <input name="url" id="url" placeholder="Ex: https://mahekarim.me/products/Xiaomi-Note9-ProMax.html" type="text" class="form-control">
+                            <input name="url" id="url" placeholder="Ex: https://example.me/products/Xiaomi-Note9-ProMax.html" type="text" class="form-control">
                         </div>
                         <div class="form-row">
                             <div class="col-md-6">

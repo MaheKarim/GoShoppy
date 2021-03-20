@@ -2,7 +2,7 @@
     <div class="app-footer">
         <div class="app-footer__inner">
             <div class="app-footer-left">
-                Developed by 💖 <a href="https://mahekarim.me" target="_blank">Jahid</a>
+                Developed by 💖 <a href="https://mahekarim.me" target="_blank">Mahe</a>
             </div>
         </div>
     </div>
