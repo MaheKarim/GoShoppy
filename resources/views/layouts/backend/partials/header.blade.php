@@ -1,6 +1,7 @@
 <div class="app-header header-shadow">
     <div class="app-header__logo">
-        <div class="logo-src"></div>
+        {{--  <div class="logo-src"></div>  --}}
+        <h1>InnoX</h1>
         <div class="header__pane ml-auto">
             <div>
                 <button

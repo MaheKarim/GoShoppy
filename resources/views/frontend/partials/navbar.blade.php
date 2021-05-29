@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-12">
                     <div class="logo">
-                        <a href="{{ url('/') }}" title="logo"><img src="{{ asset('/') }}frontend/images/logo-white.png" alt="logo"></a>
+                        {{--  <a href="{{ url('/') }}" title="logo"><img src="{{ asset('/') }}frontend/images/logo-white.png" alt="logo"></a>  --}}
                     </div>
                     <!-- Responsive Menu Area -->
                     <div class="responsive-menu-wrap"></div>

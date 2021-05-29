@@ -1,44 +1,37 @@
-/*
-  Theme Name: Excelsure | Courier & Delivery Service HTML Template
-  Theme URL: 
-  Author: Capricorn_Theme
-  Author URI: 
-  Creation Date: 15 May 2020
-  Version: 1.0
-*/
+
 
 /* [Table of Contents]
 
 01. Typograhphy
-02. Common CSS 
-03. Top Bar  
-04. Navigation  
-05. Home Slider 
-06. About Section 
-07. Services Section  
-08. Features Section  
-09. Achievement Section  
-10. Testimonial Section 
-11. App Section 
-12. Price Section 
-13. Blog Section 
-14. Client Section 
-15. Quotation Section 
-16. Footer Section 
-17. Process Section 
-18. Choose Us Section 
+02. Common CSS
+03. Top Bar
+04. Navigation
+05. Home Slider
+06. About Section
+07. Services Section
+08. Features Section
+09. Achievement Section
+10. Testimonial Section
+11. App Section
+12. Price Section
+13. Blog Section
+14. Client Section
+15. Quotation Section
+16. Footer Section
+17. Process Section
+18. Choose Us Section
 19. Team Section
-20. Breadcrumb Section 
-21. About Page 
-22. FAQ Page 
-23. Quotation Page 
-24. Service Details 
-25. Blog Details 
-26. Contact Page 
-27. Scrolltop 
-28. Sticky Area 
-29. Slicknav 
-30. Preloader 
+20. Breadcrumb Section
+21. About Page
+22. FAQ Page
+23. Quotation Page
+24. Service Details
+25. Blog Details
+26. Contact Page
+27. Scrolltop
+28. Sticky Area
+29. Slicknav
+30. Preloader
 */
 
 
@@ -394,7 +387,7 @@ ul {
 }
 
 .owl-carousel button.owl-dot {
-	background: #00656D;
+	background: #26e9b8;
 	color: inherit;
 	border: none;
 	padding: 0 !important;
@@ -2091,7 +2084,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .footer-main-block {
 	padding: 70px 0 0;
-	background-color: #00656D;
+	background-color: #0cc6d3;
 }
 
 .about-widget {
@@ -2246,7 +2239,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .tiny-footer {
-	background-color: #0c4d52;
+	background-color: #316caf;
 	padding: 20px 0;
 }
 
@@ -3176,7 +3169,7 @@ a.reply-btn {
 }
 
 #nav-bar.absolute .is-sticky .sticky-area {
-	background: #00656D;
+	background: #13dceb;
 	box-shadow: 0 3px 8px -2px #0C4D52;
 }
 
@@ -3189,7 +3182,7 @@ a.reply-btn {
 /* Preloader*/
 
 .preloader {
-	background-color: #F8A555;
+	background-color: #55f88b;
 	bottom: 0;
 	top: 0;
 	left: 0;

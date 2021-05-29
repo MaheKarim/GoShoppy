@@ -4,7 +4,11 @@
             <div class="col-lg-5 col-sm-4">
                 <div class="about-widget footer-widget">
                     <div class="logo-footer">
-                        <a href="index.html" title="logo"><img src="{{ asset('/') }}frontend/images/logo-white.png" alt="logo"></a>
+                        {{--  <a href="{{ url('/') }}" title="logo"><img src="{{ asset('/') }}frontend/images/logo-white.png" alt="logo"></a>  --}}
+                     <a href="{{ url('/') }}" title="logo">
+                    <h1 style="color: white">InnoX</h1>
+                    </a>
+
                     </div>
                     <p>There anyone who loves or pursues not some great to have pleasure.</p>
                     <div class="row">
@@ -66,7 +70,7 @@
                         <button type="submit" class="btn btn-primary" title="subscribe">Subscribe</button>
                         <label for="mc-email"></label>
                     </form>
-                    <br>    
+                    <br>
                     <div class="footer-social">
                         <ul>
                             <li>Follow Us :</li>
@@ -84,7 +88,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="copyright-block">
-                        <p>&copy; {{ now()->year }} <a href="{{ url('/') }}" title="Gochii courier service">GoShoppy</a> |  All Rights Reserved.  </p>
+                        <p>&copy; {{ now()->year }} <a href="{{ url('/') }}" title="InnoX courier service">InnoX</a> |  All Rights Reserved.  </p>
                     </div>
                 </div>
                 <div class="col-md-6 text-right">
@@ -94,7 +98,7 @@
                             <li><a href="#" title="Terms &amp; Conditions"> Terms &amp; Conditions </a></li>
 
                             <li >
-                                <a href="#"  title="Developer"> <i class="las la-globe"></i>   Developed by  <a href="https://mahekarim.me" target="_blank">❤️ Jahid</a></a>
+                                <a href="#"  title="Developer"> <i class="las la-globe"></i>   Developed by  <a href="https://mahekarim.me" target="_blank">❤️ InnoX</a></a>
                             </li>
                         </ul>
                     </div>
