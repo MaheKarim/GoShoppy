@@ -17,6 +17,7 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "3.0",
+        "myclabs/php-enum": "^1.8",
         "paypal/rest-api-sdk-php": "^1.14",
         "spatie/laravel-medialibrary": "^8.0.0"
     },
