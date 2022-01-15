@@ -43,10 +43,14 @@
                                     <h5 class="card-title">Payment Info</h5>
                                     <div class="form-group">
                                         <label for="payment_trackID">Your Payble Order Track ID</label>
-                                        <input id="payment_trackID" type="text"
-                                               class="form-control @error('payment_trackID') is-invalid @enderror"
-                                               name="payment_trackID" placeholder="Ex: 258963147" required autofocus>
-
+{{--                                        <input id="payment_trackID" type="text"--}}
+{{--                                               class="form-control @error('payment_trackID') is-invalid @enderror"--}}
+{{--                                               name="payment_trackID" placeholder="Ex: 258963147" required autofocus>--}}
+                                        <select id="payment_trackID" name="payment_trackID" class="form-control">
+                                            @foreach($trackIds as $track)
+                                            <option value="{{ $track->track_id }}">{{ $track->track_id }}  - {{ $track->created_at->diffForHumans() }}</option>
+                                            @endforeach
+                                        </select>
                                         @error('payment_trackID')
                                         <span class="invalid-feedback" role="alert">
                                          <strong>{{ $message }}</strong>
