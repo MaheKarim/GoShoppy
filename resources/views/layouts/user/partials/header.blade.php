@@ -1,6 +1,6 @@
 <div class="app-header header-shadow">
     <div class="app-header__logo">
-     <h1>InnoX</h1>
+     <h1>{{ config('app.name') }}</h1>
         <div class="header__pane ml-auto">
             <div>
                 <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
