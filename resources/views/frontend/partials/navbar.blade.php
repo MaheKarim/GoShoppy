@@ -22,13 +22,8 @@
                                         <li><a href="service-details.html" title="Service Details">Buy For Me</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" title="Pages">Pages +</a>
-                                    <ul>
                                         <li><a href="{{ url('/faq') }}" title="faq">FAQ</a></li>
-                                        <li><a href="team.html" title="Team">Team</a></li>
-                                        <li><a href="quotation.html" title="Quotation">Quotation</a></li>
-                                    </ul>
-                                </li>
+
                                 <li>
                                     <a href="{{ url('order-tracking') }}" title="order-tracking">Order Track</a>
                                 </li>
@@ -48,9 +43,8 @@
                         @auth()
                             @if(Auth::check() && Auth::user()->role->id == 1 ) {
                                 <a href="{{ route('app.dashboard') }}" class="btn btn-primary" title="get quotes">Dashboard</a>
-                             } @else {
+                              @else
                                 <a href="{{ route('user.dashboard.index') }}" class="btn btn-primary" title="get quotes">Dashboard</a>
-                                }
                                 @endif
                             @endauth
                     </div>

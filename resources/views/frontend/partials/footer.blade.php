@@ -6,11 +6,11 @@
                     <div class="logo-footer">
                         {{--  <a href="{{ url('/') }}" title="logo"><img src="{{ asset('/') }}frontend/images/logo-white.png" alt="logo"></a>  --}}
                      <a href="{{ url('/') }}" title="logo">
-                    <h1 style="color: white">InnoX</h1>
+                    <h1 style="color: white">{{ config('app.name') }}</h1>
                     </a>
 
                     </div>
-                    <p>There anyone who loves or pursues not some great to have pleasure.</p>
+                    <p>{{ config('app.name') }} There anyone who loves or pursues not some great to have pleasure.</p>
                     <div class="row">
                         <div class="col-lg-2">
                             <div class="footer-icon">
@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="copyright-block">
-                        <p>&copy; {{ now()->year }} <a href="{{ url('/') }}" title="InnoX courier service">InnoX</a> |  All Rights Reserved.  </p>
+                        <p>&copy; {{ now()->year }} <a href="{{ url('/') }}" title="InnoX courier service">{{ config('app.name') }}</a> |  All Rights Reserved.  </p>
                     </div>
                 </div>
                 <div class="col-md-6 text-right">
@@ -98,7 +98,7 @@
                             <li><a href="#" title="Terms &amp; Conditions"> Terms &amp; Conditions </a></li>
 
                             <li >
-                                <a href="#"  title="Developer"> <i class="las la-globe"></i>   Developed by  <a href="https://mahekarim.me" target="_blank">❤️ InnoX</a></a>
+                                <a href="#"  title="Developer"> <i class="las la-globe"></i>   Developed by  <a href="https://mahekarim.me" target="_blank">❤️ {{ config('app.name') }}</a></a>
                             </li>
                         </ul>
                     </div>

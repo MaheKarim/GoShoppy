@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Enums\OrderStatus;
 use App\Http\Controllers\Controller;
 use App\Models\PayNow;
 use App\Models\ShipForMe;
@@ -45,7 +46,7 @@ class PayNowController extends Controller
         $payments = new PayNow ;
         $payments->fill($request->all());
         $payments->user_id = Auth::id();
-        $payments->status_id = 1;
+        $payments->status_id = OrderStatus::PENDING;
         $payments->save();
 
         notify()->success('Payment Option Sent. Check Status After Few Minutes','Successfully');
