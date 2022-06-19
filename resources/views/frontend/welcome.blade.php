@@ -29,7 +29,6 @@
                 <div class="home-form">
                     <form  method="POST" action="{{ route('store') }}">
                         @csrf
-
                     <div class="row">
                         <div class="col-lg-3 col-md-7">
                             <label for="client_name">Name <span>*</span></label>
@@ -141,7 +140,7 @@
 <!-- footer start-->
 @include('frontend.partials.footer')
 <!-- footer end-->
- @include('frontend.partials.frontendJS')
+@include('frontend.partials.frontendJS')
 
 </body>
 <!-- body end -->

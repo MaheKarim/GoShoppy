@@ -10,6 +10,7 @@
     use App\Http\Controllers\User\PayNowController;
     use App\Http\Controllers\User\ProfileController;
     use App\Http\Controllers\User\ShipForMeController;
+    use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +39,9 @@
 
   // User Route Start From Here
 Route::group(['as'=>'user.', 'prefix'=>'user', 'middleware'=>['auth']], function (){
+
     Route::resource('dashboard', DashboardController::class);
+    // Profile Section
     Route::get('profile', [ProfileController::class,'index'])->name('profileIndex');
     Route::put('profile', [ProfileController::class,'update'])->name('profileUpdate');
     // Password Update

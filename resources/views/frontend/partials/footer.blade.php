@@ -19,7 +19,9 @@
                         </div>
                         <div class="col-lg-10">
                             <div class="footer-address">USA Office</div>
-                            <div class="footer-address-dtl">3029A, Melbourne, Australia</div>
+                            @foreach($getAddress as $get)
+                            <div class="footer-address-dtl">{{ $get->house_number }} {{ $get->street_number }}</div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="row">

@@ -12,7 +12,7 @@ services:
     ports:
       - ${DB_PORT_EXPOSE}:3306
     networks:
-      - shoppy
+      - ebabacom_shoppy
 
   php:
     build:
@@ -22,18 +22,18 @@ services:
     volumes:
       - ./:/var/www/site:cached
     networks:
-      - shoppy
+      - ebabacom_shoppy
 
   nginx:
     image: nginx:alpine
     ports:
-      - "${APP_PORT:-8052}:80"
+      - "${APP_PORT:-8299}:80"
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:cached
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:cached
       - ./:/var/www/site:cached
     networks:
-      - shoppy
+      - ebabacom_shoppy
 
 networks:
-  shoppy:
+  ebabacom_shoppy:
