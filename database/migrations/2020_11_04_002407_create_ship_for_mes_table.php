@@ -21,8 +21,8 @@ class CreateShipForMesTable extends Migration
             $table->string('product_weight');
             $table->string('product_quantity');
             $table->string('recvr_name');
-            $table->string('recvr_phn_number1');
-            $table->string('recvr_phn_number2')->nullable();
+            $table->integer('recvr_phn_number1')->default(11);
+            $table->integer('recvr_phn_number2')->nullable()->default(11);
             $table->string('recvr_mail')->nullable();
             $table->longText('recvr_address');
             $table->string('recvr_upazila');

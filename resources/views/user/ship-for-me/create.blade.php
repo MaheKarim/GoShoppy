@@ -89,51 +89,73 @@
                              <label for="product_link">Product Link</label>
                              <input type="text" name="product_link" class="form-control" value="{{ old('') }}">
 
-                             <label for="product_weight">Product Weight</label>
-                             <input type="text" name="product_weight" class="form-control @error('product_weight') is-invalid @enderror" value="{{ old('product_weight') }}" required>
+                             <div class="row">
+                                 <div class="col-md-6">
+                                     <label for="product_weight">Product Weight</label>
+                                     <input type="text" name="product_weight" class="form-control @error('product_weight') is-invalid @enderror" value="{{ old('product_weight') }}" required>
 
-                             @error('product_weight')
-                             <div class="alert alert-danger">{{ $message }}</div>
-                             @enderror
-                             <label for="product_quantity">Product Quantity</label>
-                             <input type="text" name="product_quantity" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('product_quantity') }}" required>
+                                     @error('product_weight')
+                                     <div class="alert alert-danger">{{ $message }}</div>
+                                     @enderror
+                                 </div>
+                                 <div class="col-md-6">
+                                     <label for="product_quantity">Product Quantity</label>
+                                     <input type="text" name="product_quantity" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('product_quantity') }}" required>
 
-                             @error('product_quantity')
-                             <div class="alert alert-danger">{{ $message }}</div>
-                             @enderror
+                                     @error('product_quantity')
+                                     <div class="alert alert-danger">{{ $message }}</div>
+                                     @enderror
+                                 </div>
+                             </div>
                          </div>
-                            <br>
                          <div class="form-section">
-                             <label for="recvr_name">Receiver Name</label>
-                             <input type="text" name="recvr_name" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_name') }}" required>
+                             <div class="row">
+                                 <div class="col-md-6">
+                                     <label for="recvr_name">Receiver Name</label>
+                                     <input type="text" name="recvr_name" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_name') }}" required>
 
-                             @error('recvr_name')
-                             <div class="alert alert-danger">{{ $message }}</div>
-                             @enderror
+                                     @error('recvr_name')
+                                     <div class="alert alert-danger">{{ $message }}</div>
+                                     @enderror
+                                 </div>
+                                 <div class="col-md-6">
+                                     <label for="recvr_mail">Receiver Email</label>
+                                     <input type="text" name="recvr_mail" class="form-control" value="{{ old('recvr_mail') }}">
 
-                             <label for="recvr_phn_number1">Receiver Phone</label>
-                             <input type="text" name="recvr_phn_number1" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_phn_number1') }}" required>
-                             @error('recvr_phn_number1')
-                             <div class="alert alert-danger">{{ $message }}</div>
-                             @enderror
-                             <label for="recvr_phn_number2">Receiver Phone(Optional)</label>
-                             <input type="text" name="recvr_phn_number2" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_phn_number2') }}">
+                                 </div>
+                             </div>
 
-                             @error('recvr_phn_number2')
-                             <div class="alert alert-danger">{{ $message }}</div>
-                             @enderror
+                             <div class="row">
+                                 <div class="col-md-6">
+                                     <label for="recvr_phn_number1">Receiver Phone</label>
+                                     <input type="text" name="recvr_phn_number1" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_phn_number1') }}" required>
+                                     @error('recvr_phn_number1')
+                                     <div class="alert alert-danger">{{ $message }}</div>
+                                     @enderror
+                                 </div>
+                                 <div class="col-md-6">
+                                     <label for="recvr_phn_number2">Receiver Phone(Optional)</label>
+                                     <input type="text" name="recvr_phn_number2" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_phn_number2') }}">
 
-                             <label for="recvr_mail">Receiver Email</label>
-                             <input type="text" name="recvr_mail" class="form-control" value="{{ old('recvr_mail') }}">
+                                     @error('recvr_phn_number2')
+                                     <div class="alert alert-danger">{{ $message }}</div>
+                                     @enderror
+                                 </div>
+                             </div>
 
                              <label for="recvr_address">Receiver House Address</label>
                              <textarea  name="recvr_address" class="form-control" required> </textarea>
+                             <div class="row">
+                                 <div class="col-md-6">
+                                     <label for="recvr_upazila">Receiver Upazila</label>
+                                     <input type="text" name="recvr_upazila" class="form-control" required value="{{ old('recvr_upazila') }}">
 
-                             <label for="recvr_upazila">Receiver Upazila</label>
-                             <input type="text" name="recvr_upazila" class="form-control" required value="{{ old('recvr_upazila') }}">
-
-                             <label for="recvr_zila">Receiver Zila</label>
-                             <input type="text" name="recvr_zila" class="form-control" value="{{ old('recvr_zila') }}" required>
+                                 </div>
+                                 <div class="col-md-6">
+                                     <label for="recvr_zila">Receiver Zila</label>
+                                     <input type="text" name="recvr_zila" class="form-control" value="{{ old('recvr_zila') }}" required>
+                                 </div>
+                             </div>
                          </div>
 
                          <div class="form-navigation">

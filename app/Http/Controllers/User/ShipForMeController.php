@@ -34,8 +34,8 @@ class ShipForMeController extends Controller
             'product_weight' => 'required',
             'product_quantity' => 'required|integer',
             'recvr_name' => 'required|string',
-            'recvr_phn_number1' => 'required|max:15|min:8',
-            'recvr_phn_number2' => 'string|max:15|min:8',
+            'recvr_phn_number1' => 'required|max:15|min:8|numeric',
+            'recvr_phn_number2' => 'numeric|max:15|min:8|nullable',
             'recvr_address' => 'required|string',
             'recvr_upazila' => 'required|string',
             'recvr_zila' => 'required|string',
@@ -49,17 +49,18 @@ class ShipForMeController extends Controller
         $trackID = IdGenerator::generate($config).date('HI').Auth::id();
 
         $shipformes = new ShipForMe();
-        $shipformes->product_name = $request->product_name;
-        $shipformes->product_link = $request->product_link;
-        $shipformes->product_weight = $request->product_weight;
-        $shipformes->product_quantity = $request->product_quantity;
-        $shipformes->recvr_name = $request->recvr_name;
-        $shipformes->recvr_phn_number1 = $request->recvr_phn_number1;
-        $shipformes->recvr_phn_number2 = $request->recvr_phn_number2;
-        $shipformes->recvr_mail = $request->recvr_mail;
-        $shipformes->recvr_address = $request->recvr_address;
-        $shipformes->recvr_upazila = $request->recvr_upazila;
-        $shipformes->recvr_zila = $request->recvr_zila;
+//        $shipformes->product_name = $request->product_name;
+//        $shipformes->product_link = $request->product_link;
+//        $shipformes->product_weight = $request->product_weight;
+//        $shipformes->product_quantity = $request->product_quantity;
+//        $shipformes->recvr_name = $request->recvr_name;
+//        $shipformes->recvr_phn_number1 = $request->recvr_phn_number1;
+//        $shipformes->recvr_phn_number2 = $request->recvr_phn_number2;
+//        $shipformes->recvr_mail = $request->recvr_mail;
+//        $shipformes->recvr_address = $request->recvr_address;
+//        $shipformes->recvr_upazila = $request->recvr_upazila;
+//        $shipformes->recvr_zila = $request->recvr_zila;
+        $shipformes->fill($request->all());
         $shipformes->user_id = Auth::id();
         $shipformes->status_id = 3;
         $shipformes->track_id = $trackID;
