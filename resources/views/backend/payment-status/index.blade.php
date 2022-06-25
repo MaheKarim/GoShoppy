@@ -37,7 +37,7 @@
                                 <th class="text-center">Payment Service Type</th>
                                 <th class="text-center">Sent Money</th>
                                 <th class="text-center">Sender TraXID</th>
-                                <th class="text-center">Status</th>
+                                <th class="text-center">Payment Status</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                             </thead>

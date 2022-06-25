@@ -32,7 +32,7 @@
                             <th class="text-center">From</th>
                             <th class="text-center">TraX ID</th>
                             <th class="text-center">Paid</th>
-                            <th class="text-center">Order Status</th>
+                            <th class="text-center">Payment Status</th>
                             <th class="text-center">Order Created At</th>
 
                         </tr>

@@ -42,13 +42,13 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Payment Info</h5>
                                     <div class="form-group">
-                                        <label for="payment_trackID">Your Payble Order Track ID</label>
+                                        <label for="payment_trackID">Your Payable Order Track ID</label>
 {{--                                        <input id="payment_trackID" type="text"--}}
 {{--                                               class="form-control @error('payment_trackID') is-invalid @enderror"--}}
 {{--                                               name="payment_trackID" placeholder="Ex: 258963147" required autofocus>--}}
                                         <select id="payment_trackID" name="payment_trackID" class="form-control">
                                             @foreach($trackIds as $track)
-                                            <option value="{{ $track->track_id }}">{{ $track->track_id }}  - {{ $track->created_at->diffForHumans() }}</option>
+                                            <option value="{{ $track->track_id }}">{{ $track->track_id }} : {{ $track->product_name }} - {{ $track->created_at->diffForHumans() }}</option>
                                             @endforeach
                                         </select>
                                         @error('payment_trackID')
@@ -59,7 +59,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="payment_sender_acc">Enter your PHN number</label>
+                                        <label for="payment_sender_acc">Enter Payment Number</label>
                                         <input id="payment_sender_acc" type="text"
                                                class="form-control @error('payment_sender_acc') is-invalid @enderror"
                                                name="payment_sender_acc" placeholder="+8801XX   XXXXXXX" required>
@@ -72,7 +72,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="payment_sender_traxid">Enter your TraxID</label>
+                                        <label for="payment_sender_traxid">Enter your TrxID</label>
                                         <input id="payment_sender_traxid" type="text"
                                                class="form-control @error('payment_sender_traxid') is-invalid @enderror"
                                                name="payment_sender_traxid" placeholder="10C4TY6H7FE" required>
@@ -111,7 +111,7 @@
                                         <select name="payment_name_id" class="form-control select">
                                             @php($statuss = \App\Models\PaymentService::all())
                                             @foreach ($statuss as $status)
-                                                <option value="{{ $status->id }}">{{$status->pay_service_name}}</option>
+                                                <option value="{{ $status->id }}">{{$status->pay_service_name}} : {{ $status->pay_service_account }} / {{ $status->pay_service_type }}</option>
                                             @endforeach
                                         </select>
                                     </div>
