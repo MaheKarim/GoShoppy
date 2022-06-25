@@ -72,7 +72,7 @@
 
 
                             <td class="text-center">
-                                @if ($order->status->id == 1)
+                                @if ($order->status_id == 3)
                                     <div class="badge badge-danger"> {{ $order->status->status }}</div>
                                 @else
                                     <div class="badge badge-success"> {{ $order->status->status }}</div>

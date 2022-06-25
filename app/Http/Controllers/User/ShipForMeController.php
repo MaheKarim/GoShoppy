@@ -6,39 +6,27 @@ use App\Http\Controllers\Controller;
 use App\Models\ShipForMe;
 use App\Models\USAddress;
 use Illuminate\Http\Request;
+//use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class ShipForMeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $shipformes = ShipForMe::where('user_id', Auth::id())->get();
         return view('user.ship-for-me.showown_order', compact('shipformes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $usaddresses = USAddress::find(1);
         return view('user.ship-for-me.create', compact('usaddresses'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -73,7 +61,7 @@ class ShipForMeController extends Controller
         $shipformes->recvr_upazila = $request->recvr_upazila;
         $shipformes->recvr_zila = $request->recvr_zila;
         $shipformes->user_id = Auth::id();
-        $shipformes->status_id = 1;
+        $shipformes->status_id = 3;
         $shipformes->track_id = $trackID;
         $shipformes->save();
 
@@ -83,47 +71,25 @@ class ShipForMeController extends Controller
         return redirect()->route('user.dashboard.index')->with('');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ShipForMe  $shipForMe
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(ShipForMe $shipForMe, $id)
     {
       $shipForMe = ShipForMe::find($id);
       return view('user.ship-for-me.single_order', compact('shipForMe'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ShipForMe  $shipForMe
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(ShipForMe $shipForMe)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ShipForMe  $shipForMe
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, ShipForMe $shipForMe)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ShipForMe  $shipForMe
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(ShipForMe $shipForMe)
     {
         //

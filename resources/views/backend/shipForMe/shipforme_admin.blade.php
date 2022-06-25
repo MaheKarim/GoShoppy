@@ -52,11 +52,11 @@
                                 </td>
                                 <td>
                                     <div class="widget-subheading opacity-7">
-                                        @if ($order->status->id == 1)
-                                            <span class="badge badge-warning">{{ $order->status->status }}</span>
+                                        @if ($order->status->id == 3)
+                                            <span class="badge badge-danger">{{ $order->status->status }}</span>
                                         @elseif ($order->status->id == 2)
 
-                                            <span class="badge badge-danger">{{ $order->status->status }}</span>
+                                            <span class="badge badge-warning">{{ $order->status->status }}</span>
                                         @else
                                             <span class="badge badge-primary">{{ $order->status->status }}</span>
                                         @endif
