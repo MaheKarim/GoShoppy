@@ -129,17 +129,11 @@
                                  <div class="col-md-6">
                                      <label for="recvr_phn_number1">Receiver Phone</label>
                                      <input type="text" name="recvr_phn_number1" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_phn_number1') }}" required>
-                                     @error('recvr_phn_number1')
-                                     <div class="alert alert-danger">{{ $message }}</div>
-                                     @enderror
                                  </div>
                                  <div class="col-md-6">
                                      <label for="recvr_phn_number2">Receiver Phone(Optional)</label>
                                      <input type="text" name="recvr_phn_number2" class="form-control @error('product_quantity') is-invalid @enderror" value="{{ old('recvr_phn_number2') }}">
 
-                                     @error('recvr_phn_number2')
-                                     <div class="alert alert-danger">{{ $message }}</div>
-                                     @enderror
                                  </div>
                              </div>
 

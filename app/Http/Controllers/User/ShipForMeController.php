@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Enums\OrderStatus;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ShipForMeRequest;
 use App\Models\ShipForMe;
 use App\Models\USAddress;
 use Illuminate\Http\Request;
-//use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
@@ -27,31 +28,19 @@ class ShipForMeController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(ShipForMeRequest $request)
     {
-        $request->validate([
-            'product_name' => 'required|string',
-            'product_weight' => 'required|integer',
-            'product_quantity' => 'required|integer',
-            'recvr_name' => 'required|string',
-            'recvr_phn_number1' => 'required|max:15|min:8|numeric',
-            'recvr_phn_number2' => 'numeric|max:15|min:8|nullable',
-            'recvr_address' => 'required|string',
-            'recvr_upazila' => 'required|string',
-            'recvr_zila' => 'required|string',
-        ]);
-
         $config = [
             'table' => 'ship_for_mes',
             'length' => 4,
             'prefix' => date('Ys')
         ];
-        $trackID = IdGenerator::generate($config).date('HI').Auth::id();
+        $trackID = IdGenerator::generate($config).Auth::id().date('HI');
 
         $shipformes = new ShipForMe();
         $shipformes->fill($request->all());
         $shipformes->user_id = Auth::id();
-        $shipformes->status_id = 3;
+        $shipformes->status_id = OrderStatus::PENDING;
         $shipformes->track_id = $trackID;
         $shipformes->save();
 

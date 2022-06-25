@@ -11,11 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PayNowController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application
-     */
+
     public function index()
     {
         $payments = PayNow::where('user_id', Auth::id())->get();
@@ -23,11 +19,7 @@ class PayNowController extends Controller
         return view('user.pay-now.show', compact('payments'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application
-     */
+
     public function create()
     {
         $trackIds = ShipForMe::where('user_id', Auth::id())->get();
@@ -35,12 +27,7 @@ class PayNowController extends Controller
         return view('user.pay-now.create', compact('trackIds'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $payments = new PayNow ;
