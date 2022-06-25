@@ -42,7 +42,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Payment Info</h5>
                                     <div class="form-group">
-                                        <label for="payment_trackID">Your Payable Order Track ID</label>
+                                        <label for="payment_trackID">Select Payable Order TrackID</label>
 {{--                                        <input id="payment_trackID" type="text"--}}
 {{--                                               class="form-control @error('payment_trackID') is-invalid @enderror"--}}
 {{--                                               name="payment_trackID" placeholder="Ex: 258963147" required autofocus>--}}

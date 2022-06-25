@@ -31,7 +31,7 @@ class ShipForMeController extends Controller
     {
         $request->validate([
             'product_name' => 'required|string',
-            'product_weight' => 'required',
+            'product_weight' => 'required|integer',
             'product_quantity' => 'required|integer',
             'recvr_name' => 'required|string',
             'recvr_phn_number1' => 'required|max:15|min:8|numeric',
@@ -49,24 +49,12 @@ class ShipForMeController extends Controller
         $trackID = IdGenerator::generate($config).date('HI').Auth::id();
 
         $shipformes = new ShipForMe();
-//        $shipformes->product_name = $request->product_name;
-//        $shipformes->product_link = $request->product_link;
-//        $shipformes->product_weight = $request->product_weight;
-//        $shipformes->product_quantity = $request->product_quantity;
-//        $shipformes->recvr_name = $request->recvr_name;
-//        $shipformes->recvr_phn_number1 = $request->recvr_phn_number1;
-//        $shipformes->recvr_phn_number2 = $request->recvr_phn_number2;
-//        $shipformes->recvr_mail = $request->recvr_mail;
-//        $shipformes->recvr_address = $request->recvr_address;
-//        $shipformes->recvr_upazila = $request->recvr_upazila;
-//        $shipformes->recvr_zila = $request->recvr_zila;
         $shipformes->fill($request->all());
         $shipformes->user_id = Auth::id();
         $shipformes->status_id = 3;
         $shipformes->track_id = $trackID;
         $shipformes->save();
 
-       //notify()->success('ShipForMe Order Created Successfully','Success');
         session()->flash('success','ShipForME Order Created Successfully!');
 
         return redirect()->route('user.dashboard.index')->with('');
@@ -80,19 +68,4 @@ class ShipForMeController extends Controller
     }
 
 
-    public function edit(ShipForMe $shipForMe)
-    {
-        //
-    }
-
-
-    public function update(Request $request, ShipForMe $shipForMe)
-    {
-        //
-    }
-
-    public function destroy(ShipForMe $shipForMe)
-    {
-        //
-    }
 }

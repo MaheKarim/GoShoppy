@@ -18,8 +18,8 @@ class CreateShipForMesTable extends Migration
             $table->foreignId('status_id');
             $table->string('product_name');
             $table->string('product_link')->nullable();
-            $table->string('product_weight');
-            $table->string('product_quantity');
+            $table->integer('product_weight');
+            $table->integer('product_quantity');
             $table->string('recvr_name');
             $table->integer('recvr_phn_number1')->default(11);
             $table->integer('recvr_phn_number2')->nullable()->default(11);

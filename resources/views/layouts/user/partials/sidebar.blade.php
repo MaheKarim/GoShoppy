@@ -43,18 +43,18 @@
                 <li class="app-sidebar__heading">Payments Option</li>
                 <li>
                     <a href="#" class="{{ Request::is('user/pay-now*') ? 'mm-active' : '' }}">
-                        <i class="metismenu-icon pe-7s-like2"></i> Payments Send / Check
+                        <i class="metismenu-icon pe-7s-like2"></i> Payments Service
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('user.pay-now.index') }}" class="{{ Request::is('user/pay-now') ? 'mm-active' : '' }}">
-                                <i class="metismenu-icon"></i>Check Payment Status
+                            <a href="{{ route('user.pay-now.create') }}" class="{{ Request::is('user/pay-now/create') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Send Payment Request
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('user.pay-now.create') }}" class="{{ Request::is('user/pay-now/create') ? 'mm-active' : '' }}">
-                                <i class="metismenu-icon"></i>Send Payment Request
+                            <a href="{{ route('user.pay-now.index') }}" class="{{ Request::is('user/pay-now') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Check Status
                             </a>
                         </li>
                     </ul>
@@ -69,13 +69,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('user.ShipForMe.index') }}" class="{{ Request::is('user/ShipForMe') ? 'mm-active' : '' }}">
-                                <i class="metismenu-icon"></i>Check Order Status
+                            <a href="{{ route('user.ShipForMe.create') }}" class="{{ Request::is('user/ShipForMe/create') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Send ShipForMe Request
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('user.ShipForMe.create') }}" class="{{ Request::is('user/ShipForMe/create') ? 'mm-active' : '' }}">
-                                <i class="metismenu-icon"></i>Send ShipForMe Request
+                            <a href="{{ route('user.ShipForMe.index') }}" class="{{ Request::is('user/ShipForMe') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Check Status
                             </a>
                         </li>
                     </ul>
@@ -88,17 +88,15 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('user.BuyForMe.index') }}" class="{{ Request::is('user/BuyForMe') ? 'mm-active' : '' }}">
-                                <i class="metismenu-icon"></i>Check Buy Order Status
-                            </a>
-                        </li>
-
-                        <li>
                             <a href="{{ route('user.BuyForMe.create') }}" class="{{ Request::is('user/BuyForMe/create') ? 'mm-active' : '' }}">
-                                <i class="metismenu-icon"></i>Create Buy-For-Me Request
+                                <i class="metismenu-icon"></i>Send BuyForMe Request
                             </a>
                         </li>
-
+                        <li>
+                            <a href="{{ route('user.BuyForMe.index') }}" class="{{ Request::is('user/BuyForMe') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Check Status
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="app-sidebar__heading">Settings Panel</li>
