@@ -32,7 +32,7 @@
                         </div>
                         <div class="widget-content-right">
                             <div class="widget-numbers text-white">
-                                <span>{{ \App\Models\ShipForMe::where('status_id','=','3')->count() }}</span>
+                                <span>{{ \App\Models\ShipForMe::where('status_id','=','1')->count() }}</span>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="widget-content-right">
                             <div class="widget-numbers text-white">
-                                <span>{{ \App\Models\BuyForMe::where('status_id','=','3')->count() }}</span>
+                                <span>{{ \App\Models\BuyForMe::where('status_id','=','1')->count() }}</span>
                             </div>
                         </div>
                     </div>
@@ -70,22 +70,8 @@
                     </div>
                 </div>
             </div>
-            {{--  <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-premium-dark">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Products Sold</div>
-                            <div class="widget-subheading">Revenue streams</div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-warning">
-                                <span>$14M</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  --}}
         </div>
+
         <div class="mb-3 card">
             <div class="card-header-tab card-header">
                 <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
@@ -103,7 +89,7 @@
                         </div>
                         <div class="widget-chart-content">
                             <div class="widget-subheading"> Pending Orders</div>
-                            <div class="widget-numbers">{{ \App\Models\ShipForMe::where('status_id','=','1')->count() }} Order</div>
+                            <div class="widget-numbers">{{ \App\Models\ShipForMe::where('status_id','=','3')->count() }} Order</div>
 
                         </div>
                     </div>
@@ -131,7 +117,7 @@
                         </div>
                         <div class="widget-chart-content">
                             <div class="widget-subheading">Accepted Order</div>
-                            <div class="widget-numbers"><span>{{ \App\Models\ShipForMe::where('status_id', '=', '3')->count() }} Order</span></div>
+                            <div class="widget-numbers"><span>{{ \App\Models\ShipForMe::where('status_id', '=', '1')->count() }} Order</span></div>
 
                         </div>
                     </div>
@@ -164,7 +150,7 @@
                         </div>
                         <div class="widget-chart-content">
                             <div class="widget-subheading"> Pending Orders</div>
-                            <div class="widget-numbers text-warning">{{ \App\Models\BuyForMe::where('status_id','=','1')->count() }} Order</div>
+                            <div class="widget-numbers text-warning">{{ \App\Models\BuyForMe::where('status_id','=','3')->count() }} Order</div>
 
                         </div>
                     </div>
@@ -192,7 +178,7 @@
                         </div>
                         <div class="widget-chart-content">
                             <div class="widget-subheading">Accepted Order</div>
-                            <div class="widget-numbers text-success"><span>{{ \App\Models\BuyForMe::where('status_id', '=', '3')->count() }} Order</span></div>
+                            <div class="widget-numbers text-success"><span>{{ \App\Models\BuyForMe::where('status_id', '=', '1')->count() }} Order</span></div>
 
                         </div>
                     </div>
