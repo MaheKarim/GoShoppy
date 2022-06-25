@@ -19,6 +19,9 @@
                         </div>
                         <div class="col-lg-10">
                             <div class="footer-address">USA Office</div>
+                            @php
+                            $getAddress = \App\Models\USAddress::all()
+                            @endphp
                             @foreach($getAddress as $get)
                             <div class="footer-address-dtl">{{ $get->house_number }} {{ $get->street_number }}</div>
                             @endforeach

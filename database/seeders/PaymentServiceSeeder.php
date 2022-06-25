@@ -31,7 +31,7 @@ class PaymentServiceSeeder extends Seeder
         ]);
         PaymentService::updateOrCreate([
             'pay_service_name' => 'Paypal',
-            'pay_service_account'  => 'mah@mahekarim.me',
+            'pay_service_account'  => 'mahe@mahekarim.com',
             'pay_service_type'  => 'Business',
         ]);
     }
