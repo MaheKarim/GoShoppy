@@ -52,7 +52,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="delivery_time">Estimated Delivery Date</label>
-                                <input id="delivery_time" type="text" class="form-control @error('delivery_time') is-invalid @enderror"
+                                <input id="delivery_time" type="date" class="form-control @error('delivery_time') is-invalid @enderror"
                                        name="delivery_time" value="{{ $orders->delivery_time ??  old('delivery_time') }}" required autofocus>
                                 @error('delivery_time')
                                 <span class="invalid-feedback" role="alert">
