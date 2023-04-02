@@ -29,6 +29,7 @@
     Route::get('/install', [FrontendController::class, 'install']);
 
     Route::resource('/', FrontendController::class);
+    Route::redirect('/', 'http://demo.themenio.com/tranship');
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
   // FAQ Page
