@@ -16,11 +16,6 @@ class FrontendController extends Controller
     {
        $getquotes = GetQuoteForm::all();
        $getAddress = USAddress::all();
-        // dd($getAddress);
-       // house_number
-        // street_number
-        // state_name
-        // postal_code
 
         return view('frontend.welcome', compact('getquotes', 'getAddress'));
     }
@@ -60,6 +55,11 @@ class FrontendController extends Controller
           Artisan::call('db:seed');
 
         return 'Migrate Reset - Migrate - Storage:Link - DB Seed Done!';
+    }
+
+    public function homepage()
+    {
+        return view('new-frontend.index');
     }
 
 }
